@@ -1,0 +1,156 @@
+import React, { useState,useContext, useEffect } from 'react';
+import Modal from 'react-bootstrap/Modal';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import axios from 'axios'
+import * as yup from "yup";
+import { useForm } from "react-hook-form";
+import { yupResolver } from '@hookform/resolvers/yup';
+import {UserContext} from "../App"
+import { ToastContainer, toast } from 'react-toastify';
+
+
+const schema = yup.object({
+  nomSociete: yup.string().min(3,"minimum 3 caracteres").max(100,"maximum 100 caracteres").required(),
+  siege: yup.string().min(5,"minimum 5 caracteres").max(100,"maximum 100 caracteres").required(),
+  contactprincipal: yup.string().min(3, "minimum 3 caracteres").max(100, "maximum 100 caracteres").required(),
+  numerotel: yup.string().min(10, "minimum 10 numero").max(20, "maximum 20 caracteres").required(),
+  email: yup.string().min(13,"minimum 13 caracteres").max(100,"maximum 100 caracteres").required()
+
+
+}).required();
+
+
+function CreateCompanyModal() {
+
+  const [disableBTN,setDisableBTN] = useState(false)
+  const [step, setStep] = useState(1);
+  const [show, setShow] = useState(false);
+  const handleClose = () => {setShow(false); setStep(1)}
+  const handleShow = () => setShow(true);
+  const {userAuth,setUserAuth} = useContext(UserContext);
+  const [entrepotList, SetEntrepotList]= useState([])
+  const [entrepot, SetEntrepot]= useState(0)
+  const { register, handleSubmit, formState:{ errors } } = useForm({
+    resolver: yupResolver(schema)
+  });
+   
+ useEffect(()=>{
+  show && axios.get(`${process.env.REACT_APP_HOST_VAR}rest/entrepot/getAllEntrepot`,{headers:{
+    'Authorization':  "Bearer" + userAuth.token
+  }})
+  .then((response) =>{
+
+    SetEntrepotList(response.data)
+    SetEntrepot(response.data[0].id)
+  }
+ 
+  
+      ).catch((err) => {
+      
+          SetEntrepot(err)
+      })
+ },[show])
+
+
+  const onSubmit = (data) =>{
+    console.log(data)
+    setDisableBTN(true)
+    axios.post(`${process.env.REACT_APP_HOST_VAR}rest/company/add-company/${entrepot}`,data,{headers:{
+      'Authorization':  "Bearer" + userAuth.token
+    }})
+    .then((response) =>
+          setDisableBTN(false),
+           toast.success('Societe ajoutée !'),
+           window.location.reload()
+        ).catch((err) => {
+          setDisableBTN(false)
+          toast.error('la societe existe déja');
+        })
+    
+  }
+
+
+
+  return (
+    <>
+     <Button style={{backgroundColor:'#0243cd'}} onClick={handleShow}>
+      +société
+      </Button>
+      <Modal style={{color:'#0243cd'}} show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Ajouter une société</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+      
+        <div>
+          
+          <Form onSubmit={handleSubmit(onSubmit)}>
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Nom société:</Form.Label>
+        <Form.Control {...register("nomSociete")} />
+        <p style={{color:'red'}}>{errors.nomSociete?.message}</p>
+      </Form.Group>
+     
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Adresse du siège: </Form.Label>
+        <Form.Control {...register("siege")} />
+        <p style={{color:'red'}}>{errors.siege?.message}</p>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Contact Principal:</Form.Label>
+        <Form.Control {...register("contactprincipal")} />
+        <p style={{color:'red'}}>{errors.contactprincipal?.message}</p>
+      </Form.Group> 
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Numéro de téléphone:</Form.Label>
+        <Form.Control {...register("numerotel")} />
+        <p style={{color:'red'}}>{errors.numerotel?.message}</p>
+      </Form.Group>
+
+      <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Email:</Form.Label>
+        <Form.Control {...register("email")} />
+        <p style={{color:'red'}}>{errors.email?.message}</p>
+      </Form.Group>
+
+
+     
+      <Form.Group className="mb-3" controlId="formBasicPassword">
+        <Form.Label>Entrepôt: </Form.Label>
+        <Form.Select required onChange={(e)=> { SetEntrepot(e.target.value)}}   aria-label="Default select example">
+     
+          {entrepotList?.map((el,id) =>{
+           return  <option key={id} value={el.id}>{el.name}</option>
+          })}
+         
+       </Form.Select>
+      
+      
+      </Form.Group>
+      <Button disabled={disableBTN} style={{backgroundColor:'#0243cd', float:'right'}} variant="primary" type="submit">
+      {disableBTN ? "Patientez..." : "confirmer"} 
+      </Button>
+    </Form>
+    <ToastContainer 
+            position="top-center"
+            autoClose={3000}
+            hideProgressBar={false}
+            color="green"
+            
+            />
+        </div>
+      
+     
+     
+        </Modal.Body>
+    
+        </Modal >
+    </>
+   )
+  
+}
+
+export default CreateCompanyModal;

@@ -1,0 +1,488 @@
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #0243cd !important;
+    opacity: 1; /* Firefox */
+  }
+
+  input{
+    color:#0243cd !important;
+  }
+
+  #addform{
+
+    color:white !important;
+  }
+
+   body {
+    overflow-y: hidden;
+    background: linear-gradient(to right, #f9fafb 50%, #0243cd 50%);
+    
+   }
+
+   
+   
+   #navLink:hover{
+    color:white !important;
+    background-color: #0243cd !important;
+    transition:0.5s !important;
+   }
+
+   
+
+   @media screen and (max-width: 1117px) {
+      body{
+        overflow-y: hidden;
+        background: linear-gradient(to top, #0243cd 50%, #f9fafb 50%);
+      }
+      #loginBack{
+        background:linear-gradient(to bottom, rgb(241, 201, 58) 50%, rgb(2 67 222) 50%) !important;
+   
+      }
+   }
+  .link {
+    width:200px;
+    text-align:center;
+    background-color: #0243cd ;
+  }
+  #maincontent{
+    height:100vh;
+    overflow-y: scroll !important;
+  }
+  
+  /* Specific styles for active links */
+  .link-active {
+    width:200px;
+    text-align:center;
+    background-color: #0243cd ;
+    color:#FFC700 ;
+  }
+
+  @media screen and (min-width: 1920px) {
+   
+ 
+     #loginlayout {
+         margin:'auto';
+         display: flex;
+         justify-content: center !important;
+         align-items:'center'
+     
+     }
+     #form{
+      width:450px !important;
+     }
+
+     #formlog{
+      width:100% !important;
+      margin-left: 0px !important;
+     }
+
+    }
+
+    @media screen and (max-width: 1450px) {
+      #boxgrid{
+        display: grid;
+       grid-template-columns: 2fr 2fr !important;
+    }
+    }
+
+@media screen and (max-width: 1118px) {
+   #cardImg {
+        display:none
+    }
+
+    #form {
+    
+        width:100% !important;
+    
+    }
+    #formlog{
+      width:100% !important;
+      margin-left: 0px !important;
+     }
+
+    #usrcontainer{
+
+        display:flex;
+        flex-direction:column !important;
+        gap:30px;
+
+    }
+  
+   
+  }
+
+  @media screen and (max-width: 991px) {
+   #profile{
+    float:left !important;
+    margin-left: 30px;
+    margin-bottom: 20px !important;
+   }
+   
+   
+    
+   }
+
+  
+@media screen and (max-width: 460px) {
+   #formlog{
+    
+    width:100% !important;
+    margin: auto !important;
+    margin-right: 30px !important;
+   }
+   
+
+   #form{
+    width:90% !important;
+   }
+    #logo{
+     
+        margin-right:30px !important;
+        margin-left:30px !important;
+        width:60%;
+        
+    }
+    #logo > img{
+        width:100% !important;
+    }
+   }
+  
+@media screen and (max-width: 860px) {
+  
+   
+  .AdminDetails{
+    display:flex !important;
+    flex-direction:column !important;
+    gap:50px;
+    
+  }
+  
+
+  .AdminDetails > div {
+    width:100% !important;
+  }
+    #boxcont{
+        display:flex;
+        flex-direction:column !important;
+        gap:10px;
+       }
+    
+       #drpbx1{
+        
+        overflow:scroll;
+       }
+       #subbox{
+        margin-top: 50px !important;
+        display:flex;
+        flex-direction:column !important;
+       }
+
+       #logscont{
+        display:flex;
+        flex-direction:column !important;
+        gap:30px;
+       }
+     
+       #drplogs{
+        width:120px;overflow:scroll;
+       }
+    
+   }
+
+  @media screen and (max-width: 450px) {
+    #cardImg {
+         display:none
+     }
+ 
+     #form {
+        
+         width:130% !important;
+     
+     }
+
+    }
+
+    @media screen and (max-width: 700px) {
+        #form {
+    
+            width:100% !important;
+        
+        }
+         #connect{
+           
+            margin:auto;
+            
+            font-size:10px !important;
+margin-bottom:80px;
+            margin-bottom:10px !important;
+            display:flex;
+            gap:10px;
+            flex-direction:column !important;
+            justify-content: center;
+            align-items: center;
+         }
+    
+         #connect li {
+    
+            margin: 10px !important;
+         }
+    
+    
+        }
+    
+     @media screen and (max-width: 680px) {
+      #bxdrp{
+        font-size:10px;
+        
+        overflow:auto;
+      }
+
+      #rowerBox{
+        display:flex;
+        flex-direction:row !important;
+        gap:30px;
+      }
+   
+      #drpbatches{
+        width:115px !important;
+        overflow:scroll !important;
+      }
+      #drpbatches1{
+        width:115px !important;
+        overflow:scroll !important;
+      }
+    
+   }
+
+   @media screen and (max-width: 720px) {
+    #bxdrp{
+      font-size:10px;
+   
+      overflow:auto;
+    }
+
+    #rowerBox{
+     margin-right :30px !important; ;
+    }
+
+  
+    #divuser{
+        display:flex;
+        flex-direction:column !important;
+    }
+    #drpUsr{
+        width:110px !important;
+        overflow:hidden;
+       
+    }
+    input{
+      /*  margin-top:30px !important;*/
+        margin:auto;
+    }
+  
+ }
+
+
+   @media screen and (max-width: 616px) {
+    #cardImg {
+         display:none
+     }
+ 
+     #lists{
+        width:90% !important;
+     }
+     
+     #navv{
+        
+        justify-content:center !important;
+        align-items:center !important;
+     }
+     #logo{
+        margin: auto !important;
+     }
+
+     #profile{
+        visibility: visible !important;
+     }
+    
+     #fullProfile{
+        display:none;
+     }
+
+
+     #drplot{
+
+        width:120px;
+        overflow:scroll !important;
+     }
+     
+     #batchExpand{
+      width: 120% ;
+      margin: auto !important ;
+     }
+    
+   }
+
+  
+
+   /* for batches buttons*/
+   @media screen and (max-width: 800px) {
+    #logos{
+        display:none ;
+    }
+    
+    #rower {
+       
+        display:flex;
+        flex-direction:column !important;
+       
+    }
+
+    
+
+    
+
+    .drpLot{
+        background-color:white;
+        outline: none;
+        font-size:15px;
+       overflow:scroll;
+       width:120px;
+       
+    }
+    .drp1Lot {
+    
+        overflow:scroll;
+       width:120px;
+    }
+
+    #batchcont{
+
+        display:flex;
+        flex-direction:column !important;
+    }
+
+    #batchcont > input{
+   
+        margin-top: 30px;
+        
+    }
+  
+
+  
+ 
+    }
+
+    @media screen and (max-width: 1085px) {
+        #rower {
+       
+            display:flex;
+            flex-direction:column !important;
+           
+        }
+    
+        #search{
+            margin-top: 50px;
+            
+            display:flex;
+            flex-direction:row !important;
+            
+            
+        }
+
+        #stats{
+          width:80% !important;
+          display:flex;
+          flex-direction:column !important;
+      }
+
+      #process{
+        margin:auto;
+        width:80% !important;
+        display:flex;
+        flex-direction:column !important;
+    }
+
+    .formAdd{
+      width: 80% !important;
+    }
+
+
+        
+     
+        }
+
+        @media screen and (max-width: 849px) {
+            #navretourClient{
+              
+                display:flex;
+                flex-direction:column !important;
+
+            }
+     
+             #contact{
+                
+                display:flex !important;
+                flex-direction:column !important;
+                justify-content: center;
+                align-items: center;
+             }
+          
+             }
+
+            
+       
+
+        @media screen and (max-width: 702px) {
+            #excel{
+             margin-top:140px;
+             display:flex;
+             flex-direction:column;
+             gap:50px
+            }
+
+          
+
+            #circle{
+               gap:90px;
+                display:flex;
+                flex-direction:column !important;
+            }
+
+            #excelform{
+                
+              display:flex;
+              justify-content:center;
+              align-items:center;
+              flex-direction:column !important;
+            }
+
+            #excelform > input{
+                
+               width:100% !important;
+              }
+
+            #boxgrid{
+                justify-content: center;
+                align-items: center;
+                display:flex !important;
+                flex-direction:column !important;
+            }
+
+            #headers{
+                font-size: 18px !important;
+                word-wrap: break-word;
+            }
+
+            #btnadd{
+                margin:auto !important;
+                width:200px !important;
+                font-size: 15px;
+                height:40px !important;
+            }
+     
+
+          
+     
+             
+          
+             }
