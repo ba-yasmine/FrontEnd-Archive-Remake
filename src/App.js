@@ -117,6 +117,8 @@ function App() {
    return null; // Cookie not found
  }
 
+ // this only a push test
+
  /*si le cookie n'existe pas  renvoyer vers login, sinon recuperer a partir du token les infos user
  et les mettre en variable globales pour l'acces dans toute l'app (useContext)*/
 const getAnswer = async () => {
