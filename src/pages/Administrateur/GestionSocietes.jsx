@@ -89,7 +89,6 @@ const GestionSocietes = () => {
   };
 
   return (
-<<<<<<< HEAD
     <div>
       <div>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: `${isMobile ? '70px 10px' : '10px 30px'}`, gap: "10px" }}>
@@ -108,31 +107,8 @@ const GestionSocietes = () => {
                 aria-describedby="basic-addon1"
               />
             </InputGroup>
-=======
-    <div >
-    <div >
-       
-        <div style={{display: "flex",justifyContent: "space-between", alignItems: "center", padding:`${isMobile ? '70px 10px' : '10px 30px'}`, gap:"10px"}}>
-        <CreateCompany />
-        
-    
-      
-        
-        
-          <div>
-          <InputGroup  >
-        <InputGroup.Text id="basic-addon1">{searchIco}</InputGroup.Text>
-        <Form.Control
-        value={searchTerm} onChange={handleSearch}
-          placeholder="rechercher une société"
-          aria-label="Username"
-          aria-describedby="basic-addon1"
-        />
-      </InputGroup>
->>>>>>> origin/main
           </div>
         </div>
-<<<<<<< HEAD
         <hr />
         {loading === true ? (
           <div style={{ display: 'flex', justifyContent: 'center', paddingTop: "100px" }}>
@@ -188,82 +164,5 @@ const GestionSocietes = () => {
     </div>
   );
 }
-=======
-        <div style={{display:'flex',justifyContent: 'end', alignItems: 'center',padding:'30px'}}>  
-        <WareHousesModal/>
-        </div>
-       
-     
-      <hr />
-    
-      {loading === true ? <div style={{display: 'flex',justifyContent:'center',paddingTop:"100px"}}><Spinner animation="border"  variant="primary" /> </div> : items.length !== 0  ? 
-        <div style={{borderRadius:"10px", width:"95%", margin:"auto", backgroundColor:"white", color:"#0243cd",  marginBottom:"30px",marginTop:"40px"}}>
-          <div style={{display:'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom:'20px'}}>
-             <Form.Select style={{width:'200px'}} onChange={(e)=> {setItemsPerPage(e.target.value); setCurrentPage(0)}
-        } aria-label="Default select example">
-    <option value='10'>10</option>
-    <option value='25'>25</option>
-    <option value='50'>50</option>
-    <option value='100'>100</option>
-     
-    </Form.Select>
-    </div >
-          
-            <Table style={{borderRadius:"10px", width:"100%", color:"#0243cd", margin:"auto"}} responsive>
-     
-            <thead style={{height:"80px", backgroundColor:"#f2f6fe" , fontSize:"17px"}}>
-     <tr>
-       
-     <th style={{fontWeight:"600"}}>Société <button style={{border:"none", background:"none", color:"#0243cd"}} onClick={() => setSortString('nomSociété')}  ></button></th>
-     <th style={{fontWeight:"600", whiteSpace: "nowrap"}}>Contact Principal<button style={{border:"none", background:"none", color:"#0243cd"}} onClick={() => setSortString('contactprincipal')}  ></button></th>
-     <th style={{fontWeight:"600"}}>Email<button style={{border:"none", background:"none", color:"#0243cd"}} onClick={() => setSortString('email')}  ></button></th>
-     <th style={{fontWeight:"600"}}>Adresse</th>
-     <th style={{fontWeight:"600", whiteSpace: "nowrap"}}>Téléphone<button style={{border:"none", background:"none", color:"#0243cd"}} onClick={() => setSortString('numerotel')}  ></button></th>
-     <th style={{fontWeight:"600"}}>Provenances<button style={{border:"none", background:"none", color:"#0243cd"}}  ></button></th>
-     <th style={{fontWeight:"600"}}>Contrats</th>
-     <th style={{fontWeight:"600"}}>Départements</th>
-     </tr>
-   </thead>
-   <tbody>
-     {items.length > 0 ? items.map((el,id)=>{
-   return (
-    <tr key={id}>
-    <td>{el?.nomSociete}</td>
-    <td style={{ whiteSpace: "nowrap" }}>{el?.contactprincipal}</td>
-    <td>{el?.email}</td>
-    <td>{el?.siege},{el?.willaya?.designation_fr},{el?.commune?.designation_fr},{el?.codepostale}</td>
-    <td>{el?.numerotel}</td>
-       
-    <td> <CompanyProvenances companyId={el.id}  /></td>
-     <td ><CompanyContract   company={el}  /> </td>
-     <td ><CompanyDepartements companyId={el}/> </td>
-     </tr>
-   )  
-     } 
-     
-     )
-     :
-     
-     <tr>Fin des résultats</tr>
-     }
-     
-   </tbody>
-    
-    
-  </Table>
-  <br />
-  <Pagination
-    page={currentPage}
-    totalPages={totalPages}
-    onPageChange={handlePageChange}
-  />
-   </div> : NoResults}
-  
-  
-  </div>
-  </div>
-  )
-    }
->>>>>>> origin/main
 
 export default GestionSocietes;

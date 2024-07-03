@@ -16,8 +16,4 @@ const CommuneSelect = ({ communes , onChange  , register , errors}) => (
   </Form.Group>
 );
 
-<<<<<<< HEAD
 export default CommuneSelect;
-=======
-export default CommuneSelect;
->>>>>>> origin/main

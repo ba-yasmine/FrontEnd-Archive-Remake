@@ -40,7 +40,6 @@ const CompanyDepartement = ({ companyId }) => {
         });
     }
   }, [show, refreshDepartements, companyId.id, userAuth.token]);
-<<<<<<< HEAD
 
  const removeDepartement = (departementId) => {
 
@@ -49,23 +48,11 @@ const CompanyDepartement = ({ companyId }) => {
 
 
     axios.post(`${process.env.REACT_APP_HOST_VAR}rest/departements/removeDepartementOfCompany/${companyId.id}`,{ id: departementId}, {
-=======
-
-
- const removeDepartement = (departementId) => {
-  console.log(companyId);
-  console.log(departementId);
-
-  axios.post(`${process.env.REACT_APP_HOST_VAR}rest/departements/removeDepartementOfCompany/${companyId.id}`, 
-    { id: departementId },
-    {
->>>>>>> origin/main
       headers: {
         'Authorization': `Bearer ${userAuth.token}`
       }
     }
   )
-<<<<<<< HEAD
     .then((response) => {
         toast("Département supprimé avec succès");
         setRefreshDepartements(prev => prev + 1);
@@ -74,17 +61,6 @@ const CompanyDepartement = ({ companyId }) => {
         toast(err.response?.data?.message || 'Erreur lors de la suppression du département');
     });
 };
-=======
-  .then((response) => {
-    toast("Département supprimé avec succès");
-    setRefreshDepartements(prev => prev + 1);
-  })
-  .catch((err) => {
-    toast(err.response?.data?.message || 'Erreur lors de la suppression du département');
-  });
-};
-
->>>>>>> origin/main
 
   return (
     <>
@@ -102,11 +78,7 @@ const CompanyDepartement = ({ companyId }) => {
           </DepartementContext.Provider>
 
           <hr />
-<<<<<<< HEAD
           <h6 style={{ marginTop: "30px", marginBottom: "20px" , fontWeight: 'bold'}}>Départements de l'utilisateur </h6>
-=======
-          <h5 style={{ marginTop: "30px", marginBottom: "30px" }}>Départements de l'utilisateur </h5>
->>>>>>> origin/main
 
           <Table striped responsive hover size="sm" style={{ color: "#0243cd" }}>
             <thead>

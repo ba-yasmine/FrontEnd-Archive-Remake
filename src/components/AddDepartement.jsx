@@ -82,10 +82,6 @@ const AddDepartement = ({ companyId }) => {
             toast('Nouveau département ajouté à cette société avec succès !');
             setNewDepartementName('');
             setAddedDepartements(prev => [...prev, response.data]); // Add the new department to the added list
-<<<<<<< HEAD
-=======
-            //setRefresh(prev => prev + 1); // Refresh the list
->>>>>>> origin/main
             setRefreshDepartements(prev => prev + 1);
         })
         .catch((err) => {
