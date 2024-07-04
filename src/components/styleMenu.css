@@ -162,7 +162,7 @@ header .image-text .profession{
 }
 
 .active{
-    background-color: rgb(231 233 237) !important;
+    background-color: rgba(77, 91, 120, 0.14) !important;
 }
 
 .sidebar li a:hover .icon,
