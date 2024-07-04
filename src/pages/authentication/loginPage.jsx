@@ -80,6 +80,7 @@ const LoginPage = () => {
           } 
           else {
             setCookie("token", response.data.token, 1);
+            //console.log(response.data.firstname+" , "+response.data.lastname)
             setUserAuth({
               
               token: response.data.token,

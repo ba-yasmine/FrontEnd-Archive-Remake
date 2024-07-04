@@ -33,7 +33,7 @@ const Layout = ({ children, isBack }) => {
         }
         else {
           return (
-            <div style={{ display:"grid", gridTemplateColumns:  '10% 90%'  }}>
+            <div style={{ display:"grid", gridTemplateColumns:  '18% 82%'  }}>
             
             <div style={{borderRight:'2px solid #e5e7eb',}}>
             {userAuth.role[0] === "ROLE_ADMIN" ? <AdminNavBar /> : userAuth.role[0] === "ROLE_CLIENT" ?

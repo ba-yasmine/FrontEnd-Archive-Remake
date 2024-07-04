@@ -1,138 +1,148 @@
-import React, { useState, useEffect,useContext } from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Button from 'react-bootstrap/Button';
-import { faBars, faUser } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { Link ,NavLink, useNavigate} from "react-router-dom";
+import {faBars, faUser} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
+import {Link, NavLink, useNavigate} from "react-router-dom";
 import axios from "axios";
 import {UserContext} from "../App"
-import { BiHomeAlt, BiUser,} from "react-icons/bi";
-import { TbBuildingFactory, TbActivity} from "react-icons/tb";
+import {BiHomeAlt, BiUser,} from "react-icons/bi";
+import {TbBuildingFactory, TbActivity} from "react-icons/tb";
 import "../pages/Administrateur/style.css"
 import {FiMenu} from "react-icons/fi"
+import "./styleMenu.css"
 
 const NavBarCoordinateur = () => {
 
-  function deleteCookie() {
-    document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-  }
-  const {userAuth,setUserAuth} = useContext(UserContext);
-  let navigate =useNavigate()
-  const [isMobile, setIsMobile] = useState(false);
-  const [show, setShow] = useState(false);
-  const barsIco = <FontAwesomeIcon style={{color:'#0243cd'}} icon={faBars}/>
-  const userProfil = <FontAwesomeIcon style={{color:'#0243cd'}} size='2x'  icon={faUser}/>
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-  const [navData, setNavData] = useState([
-   
-  {
-    icon:<TbBuildingFactory style={{fontSize:'30px'}}/>,
-    name:'Gérer Sociétés',
-    link:`/Admin/companies`
-  },
-  {
-    icon:<BiUser  style={{fontSize:'30px'}}/>,
-    name:'Gestion utilisateurs',
-    link:`/Admin/clients`
-  },
-  {
-    icon:<TbActivity style={{fontSize:'30px'}} />,
-    name:"Logs d'activités",
-    link:`Admin/usersLogs`
-  }
-
-  ]);
-
-  const logout=()=> {
-    
-      deleteCookie();
-      setUserAuth({
-        role: ['DefaultRole']
-      } )
-      navigate('/')
+    function deleteCookie() {
+        document.cookie = "token=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
     }
-          
 
-          useEffect(() => {
-            const handleResize = () => {
-              if (window.innerWidth < 1205) { // Example breakpoint for mobile
+    const {userAuth, setUserAuth} = useContext(UserContext);
+    let navigate = useNavigate()
+    const [isMobile, setIsMobile] = useState(false);
+    const [show, setShow] = useState(false);
+    const barsIco = <FontAwesomeIcon style={{color: '#0243cd'}} icon={faBars}/>
+    const userProfil = <FontAwesomeIcon style={{color: '#0243cd'}} size='2x' icon={faUser}/>
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+    const [navData, setNavData] = useState([
+
+        {
+            icon: <TbBuildingFactory style={{fontSize: '30px'}}/>, name: 'Gérer Sociétés', link: `/Admin/companies`
+        }, {
+            icon: <BiUser style={{fontSize: '30px'}}/>, name: 'Gestion utilisateurs', link: `/Admin/clients`
+        }, {
+            icon: <TbActivity style={{fontSize: '30px'}}/>, name: "Logs d'activités", link: `Admin/usersLogs`
+        }
+
+    ]);
+
+    const logout = () => {
+
+        deleteCookie();
+        setUserAuth({
+            role: ['DefaultRole']
+        })
+        navigate('/')
+    }
+
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 1205) { // Example breakpoint for mobile
                 setIsMobile(true);
-              } else {
+            } else {
                 setIsMobile(false);
-              }
-            };
-          
-            handleResize(); // Check initial size
-            window.addEventListener("resize", handleResize);
-            return () => window.removeEventListener("resize", handleResize);
-          }, []);
+            }
+        };
 
- 
-  return (
-    
-    <div className="container-fluid" style={{ backgroundColor: 'white' , color:'#33475a',overflowY:'hidden', zIndex:"9900"}}>
-    <div className="row flex-nowrap">
-        <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 " style={{ width: '500px' }}>
-            <div className="d-flex flex-column  align-items-sm-start  pt-2 text-white min-vh-100 w-100">
-            
-                <ul className="nav nav-pills flex-column mb-auto mb-0  align-items-sm-start" id="menu">
-                <h4 style={{width:"150px",marginRight:"10px", color:"#0243cd"}}  className="d-flex align-items-center pb-3 mb-md-0 me-md-auto mt-2  text-decoration-none">
-                    <span className="fs-5 d-none d-sm-inline"><FiMenu/> Menu</span>
-                </h4>
-                   
-                   { navData.map((el, idx) =>
-                    
-                    <NavLink key={idx}
-                   to={el.link}
-                   style={({ isActive, isPending }) => {
-                    return {
-                      backgroundColor: isActive ? "#0243cd" : "white",
-                      color: isActive ? "white" : "#0243cd",
-                      borderRadius:'7px',
-                      textDecoration:'none',
-                      marginTop:'30px',
-                      paddingTop:'8px',
-                      paddingBottom:'8px',
-                      paddingLeft:'3px',
-                      width:'100%',
-                      
-                    };
-                   }}
-                      id="navLink">
-                <h5> {!isMobile ? el.name : el.icon} </h5>
-                 </NavLink>
-                           )
-                 
-                 }
-         
-                    
-                </ul>
-                
-                <div className="dropdown pb-4" style={{position:"absolute", bottom:"0"}}>
-                    <a  className="d-flex align-items-center  text-decoration-none " id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                       
-                        <span className="mx-1">{userProfil}</span>
-                    </a>
-                    <ul className="dropdown-menu dropdown-menu-light text-small shadow position-absolute" aria-labelledby="dropdownUser1">
-                        <li >
-                        <a  onClick={() =>navigate("/Admin/ProfileDetails")}  className="dropdown-item" href="#">Mon profil</a>
+        handleResize(); // Check initial size
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+
+    return (<div>
+        <nav className="sidebar">
+            <header>
+                <div className="image-text">
+                <span className="image">
+                    <div style={{
+                        width: '40px',
+                        height: '40px',
+                        backgroundColor: '#4CAF50',
+                        borderRadius: '8px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        color: '#fff' ,
+                        fontFamily: "Poppins",
+                        fontWeight:"600"
+                    }}>
+                     {userAuth.email ? userAuth.email.substring(0, 2).toUpperCase() : "N/A"}
+                  </div>
+                </span>
+                    <div className="text bx-menu-alt">
+                        <span className="name">Menu</span>
+                    </div>
+                </div>
+            </header>
+
+
+            <div className="menu-bar">
+                <div className="menu">
+                    <ul className="menu-links">
+                        <li className="nav-link">
+                            <NavLink to="/Admin/companies">
+                                <i className="bx bx-home-alt icon"></i>
+                                <span className="text nav-text">Gérer Sociétés</span>
+                            </NavLink>
                         </li>
-                        <li>
-                            
+                        <li className="nav-link">
+                            <NavLink to="/Admin/clients">
+                                <i className="bx bx-user-circle icon"></i>
+                                <span className="text nav-text">Gestion utilisateurs</span>
+                            </NavLink>
                         </li>
-                        <li>
-                          <a  onClick={logout} className="dropdown-item" href="#">Se déconnecter</a>
-                          
-                          </li>
+                        <li className="nav-link">
+                            <NavLink to="/Admin/usersLogs">
+                                <i className="bx bx-bell icon"></i>
+                                <span className="text nav-text">Logs d'activités</span>
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
+                <div className="bottom-content">
+
+                    <li >
+                        <a id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false" >
+                            <i className='bx bx-user icon'></i>
+                            <span className="text nav-text">Profil</span>
+                        </a>
+                        <ul className="dropdown-menu dropdown-menu-light text-small shadow position-absolute" aria-labelledby="dropdownUser1" style={{width:"245px"}}>
+                            <li >
+                                <a  onClick={() =>navigate("/Admin/ProfileDetails")}  className="dropdown-item" href="#">Mon profil</a>
+                            </li>
+
+                            <li>
+                                <a  onClick={logout} className="dropdown-item" href="#">Se déconnecter</a>
+
+                            </li>
+                        </ul>
+                    </li>
+                </div>
+
             </div>
-        </div>
-      
-    </div>
-</div>
-  )
+        </nav>
+
+
+
+        <section className="home">
+            <div className="text">Dashboard Sidebar</div>
+        </section>
+    </div>)
 }
 
 export default NavBarCoordinateur
