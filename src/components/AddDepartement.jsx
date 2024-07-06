@@ -11,6 +11,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import WillayaSelect from './WillayaSelect';
 import CommuneSelect from './CommuneSelect';
+import './styleButton.css';
 
 const AddDepartement = ({ companyId }) => {
     
@@ -117,9 +118,11 @@ const AddDepartement = ({ companyId }) => {
                             </Form.Select>
                         </Col>
                         <Col xs="auto">
-                            <Button type="submit" style={{ marginTop: '30px', backgroundColor: '#0243cd', color: 'white' , width:110}}>
-                                Ajouter
-                            </Button>
+                            <div className="buttonStyle">
+                                <Button type="submit" style={{ marginTop: '30px', color: 'white' , width:110}}>
+                                    Ajouter
+                                </Button>
+                            </div>
                         </Col>
                     </Row>
                 }
@@ -139,9 +142,11 @@ const AddDepartement = ({ companyId }) => {
                         />
                     </Col>
                     <Col xs="auto">
-                        <Button type="submit" style={{ marginBottom: '10px', backgroundColor: '#0243cd', color: 'white', width:115 }}>
-                            + Nouveau 
-                        </Button>
+                        <div className="buttonStyle">
+                            <Button type="submit" style={{ marginBottom: '10px', color: 'white', width:115 }}>
+                                + Nouveau
+                            </Button>
+                        </div>
                     </Col>
                 </Row>
             </Form>

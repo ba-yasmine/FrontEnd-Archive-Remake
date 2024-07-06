@@ -9,8 +9,9 @@ import * as yup from "yup";
 import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ToastContainer, toast } from 'react-toastify';
-import NoResult from './noResultsFound'
-import AddWareHouse from "./AddEntrepot"
+import NoResult from './noResultsFound';
+import AddWareHouse from "./AddEntrepot";
+import './styleButton.css';
 
 
 
@@ -52,9 +53,11 @@ const WareHousesModal = ({companyId}) => {
      
   return (
    <>
-      <Button style={{backgroundColor:'#0243cd', }} onClick={handleShow}>
-        Gérer les entrepôts
-      </Button>
+      <div className="buttonStyle">
+          <Button  onClick={handleShow}>
+            Gérer les entrepôts
+          </Button>
+      </div>
 
       <Modal style={{color:"#0243cd"}}  show={show} onHide={handleClose}>
         <Modal.Header closeButton>

@@ -8,6 +8,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import "../Administrateur/style.css"
 import {headerTitleContext} from '../../Layout/layout'
 import {UserContext} from "../../App"
+import '../../components/styleButton.css';
+
 const UserDetails = () => {
 
   const {setheaderTitle, setheaderArrow} = useContext(headerTitleContext);
@@ -44,57 +46,59 @@ const UserDetails = () => {
       <div >
            
             
-          <main id="contact" style={{display:"flex",flexDirection:'column', alignItems:"center", justifyContent:"center",  }}>
+          <main id="contact" style={{display:"flex",flexDirection:'column', alignItems:"center", justifyContent:"center"}}>
           <ToastContainer 
             position="top-center"
             autoClose={3000}
             hideProgressBar={false}
             color="green"
-            
             />
          
-            <ListGroup  id="lists" style={{width:"50%",margin:"50px"}} as="ol" >
+            <ListGroup  id="lists" style={{width:"50%",margin:"50px" }} as="ol" >
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)" , paddingBottom:'20px', paddingTop:'10px'}}
         as="li"
        
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div style={{fontWeight:'600', fontSize:'18px'}} >Adresse</div>
-          187 lot bouchaoui 2, N°32, Chéraga 16084
+          <div style={{fontWeight:'600', fontSize:'16px'}} >Adresse</div>
+          <div style={{ fontSize:'14px'}} >187 lot bouchaoui 2, N°32, Chéraga 16084</div>
+
         </div>
        
       </ListGroup.Item>
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)" ,paddingBottom:'20px', paddingTop:'10px'}}
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div style={{fontWeight:'600', fontSize:'18px'}} >Téléphone  </div>
-          0560 98 57 75
+          <div style={{fontWeight:'600', fontSize:'16px'}} >Téléphone  </div>
+           <div style={{ fontSize:'14px'}} >0560 98 57 75</div>
+
         </div>
        
       </ListGroup.Item>
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)",paddingBottom:'20px', paddingTop:'10px'}}
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div style={{fontWeight:'600', fontSize:'18px'}} >Email</div>
-          info@capturedoc.com
+          <div style={{fontWeight:'600', fontSize:'16px'}} >Email</div>
+          <div style={{ fontSize:'14px'}} >info@capturedoc.com</div>
+
         </div>
        
       </ListGroup.Item>
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)" ,paddingBottom:'20px', paddingTop:'10px' }}
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 " style={{marginRight:"10px"}}>
-          <div style={{fontWeight:'600', fontSize:'18px', marginBottom:"15px"}}>Envoyer un message</div>
+          <div style={{fontWeight:'600', fontSize:'16px', marginBottom:"15px"}}>Envoyer un message</div>
          <form onSubmit={(e) =>sendRequest(e)}>
           <FloatingLabel controlId="floatingSelect" label="Veuillez sélectionner le motif de votre requête:">
       <Form.Select required onChange={e => setObject(e.target.value)} aria-label="Veuillez sélectionner le motif de votre requête:">
@@ -116,8 +120,9 @@ const UserDetails = () => {
           
         />
       </FloatingLabel>
-
-      <Button type="submit" style={{backgroundColor:"#0243cd",marginTop:"30px",marginBottom:"10px"}}>Envoyer votre demande</Button>
+      <div className="buttonStyle">
+          <Button type="submit" style={{marginTop:"30px",marginBottom:"10px"}}>Envoyer votre demande</Button>
+      </div>
       </form>
         </div>
        

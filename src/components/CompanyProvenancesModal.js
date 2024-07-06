@@ -11,6 +11,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { ToastContainer, toast } from 'react-toastify';
 import NoResult from './noResultsFound'
 import AddProvenance from './AddProvenance'
+import './styleButton.css';
 
 
 const schema = yup.object({
@@ -54,13 +55,15 @@ const CompanyProvenanceModal = ({companyId}) => {
      
   return (
    <>
-      <Button style={{backgroundColor:'#0243cd'}} onClick={handleShow}>
-        Provenances
-      </Button>
+      <div className="buttonStyle">
+          <Button onClick={handleShow}>
+            Provenances
+          </Button>
+      </div>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title style={{color:'#0243cd'}}>Provenances de Ooredoo</Modal.Title>
+          <Modal.Title style={{color:'#0243cd'}}>Provenances</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <ProvenanceContext.Provider value={{setRefresh}}>

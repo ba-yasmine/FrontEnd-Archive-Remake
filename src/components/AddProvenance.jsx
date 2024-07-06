@@ -11,6 +11,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import {UserContext} from "../App"
 import { ProvenanceContext } from './CompanyProvenancesModal';
 import { ToastContainer, toast } from 'react-toastify';
+import './styleButton.css';
 
 
 
@@ -59,10 +60,11 @@ const AddProvenance = ({companyId}) => {
           />
                   <p style={{color:'red'}}>{errors.adresse?.message}</p>
         </Col>
-
-          <Button type="submit"  style={{ margin: '11px', backgroundColor: '#0243cd', color: 'white', width:'150px'}} className="mb-3">
-            Ajouter
-          </Button>
+          <div className="buttonStyle">
+              <Button type="submit"  style={{ color: 'white', width:'120px'}} className="mb-3">
+                Ajouter
+              </Button>
+          </div>
            <hr />
 
       </Row>

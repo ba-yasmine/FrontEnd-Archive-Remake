@@ -8,6 +8,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from '@hookform/resolvers/yup';
 import {UserContext} from "../App"
 import { ToastContainer, toast } from 'react-toastify';
+import './styleButton.css';
 
 
 const schema = yup.object({
@@ -74,9 +75,11 @@ function CreateCompanyModal() {
 
   return (
     <>
-     <Button style={{backgroundColor:'#0243cd'}} onClick={handleShow}>
-      +société
-      </Button>
+     <div className="buttonStyle">
+         <Button  onClick={handleShow}>
+          +société
+          </Button>
+      </div>
       <Modal style={{color:'#0243cd'}} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Ajouter une société</Modal.Title>

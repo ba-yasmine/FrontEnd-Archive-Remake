@@ -11,6 +11,7 @@ import {UserContext} from "../App"
 import { ToastContainer, toast } from 'react-toastify';
 import WillayaSelect from './WillayaSelect';
 import CommuneSelect from './CommuneSelect';
+import './styleButton.css';
 
 
 const schema = yup.object({
@@ -116,9 +117,11 @@ const [willayas, setWillayas] = useState([]);
 
   return (
     <>
-     <Button style={{backgroundColor:'#0243cd'}} onClick={handleShow}>
-      Ajouter société
-      </Button>
+     <div className="buttonStyle">
+         <Button  onClick={handleShow}>
+          Ajouter société
+          </Button>
+     </div>
       <Modal style={{color:'#0243cd'}} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Ajouter une société</Modal.Title>
@@ -182,10 +185,11 @@ const [willayas, setWillayas] = useState([]);
     <WillayaSelect register={register} errors={errors} willayas={willayas} onChange={handleWillayaChange} />
     <CommuneSelect register={register} errors={errors} communes={communes} onChange={handleCommuneChange}/>
 
-
-      <Button disabled={disableBTN} style={{width:'100%', backgroundColor:'#0243cd', float:'right'}} variant="primary" type="submit">
+      <div className="buttonStyle">
+      <Button disabled={disableBTN} style={{width:'100%', float:'right'}} variant="primary" type="submit">
       {disableBTN ? "Patientez..." : "confirmer"}
       </Button>
+      </div>
     </form>
     <ToastContainer
             position="top-center"

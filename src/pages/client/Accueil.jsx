@@ -7,6 +7,7 @@ import {headerTitleContext} from '../../Layout/layout'
 import BoxesByTransactonClient from "./statistiques/boxesByTransactionclient"
 import BoxeIncompanyByDepartement from "./statistiques/boxesInCompanyByDepartements"
 import BoxesInCompanyByLocation from "./statistiques/boxesInCompanyByLocation"
+import '../../components/styleButton.css';
 
 
 
@@ -31,42 +32,44 @@ const Accueil = () => {
         <div >
         <br />
         <br />
-        <h4 style={{textAlign:"center",color:"#0243cd",marginBottom:"100px"}}> Faire une demande:</h4>
-        <div id='process' style={{display : "flex" , justifyContent:"center",alignItems:"center", gap:"40px"}}>
-        <Card border="primary" 
-        onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/addBox`)  }
-        style={{ width: '22rem' ,color:"white", background: "#033fbe", cursor: 'pointer'
-}}>
-        <Card.Header>Processus</Card.Header>
-        <Card.Body>
-          <Card.Title>AJOUT DE BOITES</Card.Title>
-          <Card.Text>
-            Créez un lot Add Box 
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      
+        <h4 style={{textAlign:"center",color:"#0243cd",marginBottom:"80px"}}> Faire une demande:</h4>
 
-      <Card border="secondary"  onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/boxRequest`)  } style={{ width: '22rem',color:"white" , background: "#033fbe",cursor: 'pointer'}}>
-        <Card.Header>Processus</Card.Header>
-        <Card.Body>
-          <Card.Title> DEMANDE DE BOITES </Card.Title>
-          <Card.Text>
-          Créez un lot Box Request 
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      
-
-      <Card border="success"  onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/boxReturn`)  } style={{ width: '22rem', color:"white",  background: "#033fbe", cursor: 'pointer' }}>
-        <Card.Header>Processus</Card.Header>
-        <Card.Body>
-          <Card.Title>RETOUR DE BOITES </Card.Title>
-          <Card.Text>
-          Créez un lot Box Return 
-          </Card.Text>
-        </Card.Body>
-      </Card>
+            <div id='process' style={{display : "flex" , justifyContent:"center",alignItems:"center", gap:"40px"  }}>
+            <div id='boxone'>
+            <Card border="primary"
+            onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/addBox`)  }
+            style={{ width: '22rem' ,color:"white", background:"linear-gradient(90deg,#ffbf96,#fe7096)", cursor: 'pointer', border:'none'}}>
+            <Card.Header style={{ padding:'20px' }}>Processus</Card.Header>
+            <Card.Body style={{ paddingTop:'40px', paddingBottom:'40px' }}>
+              <Card.Title>AJOUT DE BOITES</Card.Title>
+              <Card.Text>
+                Créez un lot Add Box
+              </Card.Text>
+            </Card.Body>
+          </Card>
+         </div>
+        <div id='boxtwo'>
+          <Card border="secondary"  onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/boxRequest`)  } style={{ width: '22rem',color:"white" , background: "linear-gradient(90deg,#90caf9,#047edf 99%)",cursor: 'pointer' , border:'none'}}>
+            <Card.Header style={{ padding:'20px' }}>Processus</Card.Header>
+            <Card.Body  style={{ paddingTop:'40px', paddingBottom:'40px' }}>
+              <Card.Title> DEMANDE DE BOITES </Card.Title>
+              <Card.Text>
+              Créez un lot Box Request
+              </Card.Text>
+            </Card.Body>
+          </Card>
+      </div>
+      <div id='boxthree'>
+          <Card border="success"  onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/boxReturn`)  } style={{ width: '22rem', color:"white",  background: "linear-gradient(90deg,#84d9d2,#07cdae)", cursor: 'pointer' , border:'none'}}>
+            <Card.Header style={{ padding:'20px' }}>Processus</Card.Header>
+            <Card.Body  style={{ paddingTop:'40px', paddingBottom:'40px' }}>
+              <Card.Title>RETOUR DE BOITES </Card.Title>
+              <Card.Text>
+              Créez un lot Box Return
+              </Card.Text>
+            </Card.Body>
+          </Card>
+      </div>
   
         </div>
         <h4 style={{fontWeight:"600", color:"#0243cd",textAlign:'center',marginTop:"120px"}}>Statistiques:</h4>

@@ -10,6 +10,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from '@hookform/resolvers/yup';
 import { ToastContainer, toast } from 'react-toastify';
+import '../../components/styleButton.css';
 
 const schema = yup.object().shape({
   description: yup.string().required("Description is required"),
@@ -152,10 +153,12 @@ const onSubmit = (data) => {
 }
 
   return (
-    <div style={{  }}>
-        <Button style={{ backgroundColor:"#0243cd", width:'170px'}} variant="primary" onClick={handleShow}>
+    <div >
+    <div className="buttonStyle">
+        <Button style={{  width:'170px'}} variant="primary" onClick={handleShow}>
          Ajouter une boite
-      </Button> 
+      </Button>
+    </div>
       <Modal size="lg"   show={show} onHide={()=>{handleClose(); setRes("")}}>
       <ToastContainer 
             position="top-center"
@@ -164,6 +167,7 @@ const onSubmit = (data) => {
             color="green"
             
             />
+
         <Modal.Header closeButton>
           <Modal.Title>Ajouter une boite</Modal.Title>
         </Modal.Header>

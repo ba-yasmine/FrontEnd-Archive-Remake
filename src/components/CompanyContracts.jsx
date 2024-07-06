@@ -10,6 +10,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Badge from 'react-bootstrap/Badge';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Form from 'react-bootstrap/Form';
+import './styleButton.css';
 
 const CompanyContracts = ({company}) => {
     const [show, setShow] = useState(false);
@@ -75,10 +76,11 @@ const CompanyContracts = ({company}) => {
     }
     return (
       <>
-        <Button style={{backgroundColor:"#0243cd", color: "white", borderRadius:"15px"}}  onClick={handleShow}>
-          Contrats
-        </Button>
-  
+        <div className="buttonStyle">
+            <Button onClick={handleShow}>
+              Contrats
+            </Button>
+        </div>
         <Modal style={{color:"#0243cd"}} size="xl" show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Contrats de la société {company.nomSociete} </Modal.Title>

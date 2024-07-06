@@ -15,6 +15,7 @@ import {headerTitleContext} from '../../Layout/layout'
 import NoResults from '../../components/noResultsFound'
 import { BsFilterSquare} from "react-icons/bs";
 import {TbFileExport} from "react-icons/tb"
+import '../../components/styleButton.css';
 
 const GestionLogs = () => {
  
@@ -250,8 +251,10 @@ const GestionLogs = () => {
     <option value='100'>100</option>
      
     </Form.Select>
-  <Button onClick={()=>handleExportChange()}
-  style={{backgroundColor: 'white', border:'2px solid green', color:'green', paddingLeft:'20px', paddingRight:'20px', display:'flex', flexDirection:'row', width:'auto', paddingTop:"4px", paddingBottom:"2px"}}> <p style={{fontWeight:'600'}}>Exporter</p>   <TbFileExport style={{fontSize:'30px',marginLeft:'5px' }}/></Button>
+      <div className="exporter">
+          <Button onClick={()=>handleExportChange()}
+          style={{  color:'blue', paddingLeft:'20px', paddingRight:'20px', display:'flex', flexDirection:'row', width:'auto', paddingTop:"4px", paddingBottom:"2px"}}> <p style={{fontWeight:'600' , paddingTop:'8px', paddingBottom: '0px'}}>Exporter</p>   <TbFileExport style={{fontSize:'30px',marginLeft:'5px' , paddingTop: '10px' }}/></Button>
+      </div>
     </div >
             
             <Table style={{borderRadius:"10px", width:"100%",margin:"auto"}} responsive>

@@ -12,6 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import NoResult from './noResultsFound';
 import { responsivePropType } from 'react-bootstrap/esm/createUtilityClasses';
+import './styleButton.css';
 
 export const DepartementContext = createContext();
 
@@ -64,9 +65,11 @@ const CompanyDepartement = ({ companyId }) => {
 
   return (
     <>
-      <Button style={{ backgroundColor: '#0243cd' }} onClick={handleShow}>
-        Départements
-      </Button>
+      <div className="buttonStyle">
+          <Button onClick={handleShow}>
+            Départements
+          </Button>
+      </div>
 
       <Modal style={{ color: "#0243cd" }} show={show} onHide={handleClose}>
         <Modal.Header closeButton>
@@ -89,9 +92,9 @@ const CompanyDepartement = ({ companyId }) => {
             </thead>
             <tbody>
               {departements.length > 0 ? departements.map((el, id) => (
-                <tr key={id}>
-                  <td>{el.nom}</td>
-                  <td><Button variant="danger" onClick={() => removeDepartement(el.id)}>{removeDepIco}</Button></td>
+                <tr key={id} >
+                      <td>{el.nom}</td>
+                      <td><Button variant="danger" onClick={() => removeDepartement(el.id)}>{removeDepIco}</Button></td>
                 </tr>
               )) : <tr><td colSpan="2">Aucun département trouvé</td></tr>}
             </tbody>

@@ -42,11 +42,8 @@ const Layout = ({ children, isBack }) => {
             
             }
             </div>
-            
-            
-            
-            
-              <div id="maincontent" style={{ backgroundColor:"#f9fafb" ,  overflowY:"hidden"}}>
+
+              <div id="maincontent" style={{ backgroundColor:"#f2edf3" ,  overflowY:"hidden"}}>
               <Header title={headerTitle} arrow={headerArrow}/> 
             <div style={{padding:'10px', paddingTop:'5%', }}>
             <headerTitleContext.Provider value={{setheaderTitle, setheaderArrow}}>
@@ -59,7 +56,6 @@ const Layout = ({ children, isBack }) => {
             </div>
           );
         }
-    
 
 };
 

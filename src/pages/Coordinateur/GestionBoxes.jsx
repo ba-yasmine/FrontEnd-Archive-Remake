@@ -25,6 +25,7 @@ import BoxHistory from './BoxHistory';
 import NoResults from '../../components/noResultsFound'
 import { BsFilterSquare} from "react-icons/bs";
 
+
 const ITEMS_PER_PAGE = 10;
 
 const GestionBoites = () => {
@@ -277,8 +278,8 @@ const GestionBoites = () => {
         }
         
         
-       <div style={{ marginLeft: '15px' }}>
-        <InputGroup  >
+       <div style={{ marginLeft: '40px' }}>
+        <InputGroup  style={{marginTop:'30px'}}>
         <InputGroup.Text id="basic-addon1">{searchIco}</InputGroup.Text>
         <Form.Control
         value={searchTerm} onChange={handleSearch}

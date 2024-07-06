@@ -127,9 +127,9 @@ const GestionSocietes = () => {
             <Table style={{ borderRadius: "10px", width: "100%", margin: "auto"}} responsive>
               <thead style={{ height: "60px", fontSize: "17px" }}>
                 <tr>
-                  <th style={{ fontWeight: "600" }}>Société<button style={{ border: "none", background: "none", color: "#0243cd" }} onClick={() => setSortString('nomSociété')}></button></th>
+                  <th style={{ fontWeight: "600" }}>Société</th>
                   <th style={{ fontWeight: "600", whiteSpace: "nowrap" }}>Contact Principal<button style={{ border: "none", background: "none", color: "#0243cd" }} onClick={() => setSortString('contactprincipal')}></button></th>
-                  <th style={{ fontWeight: "600" }}>Email<button style={{ border: "none", background: "none", color: "#0243cd" }} onClick={() => setSortString('email')}></button></th>
+                  <th style={{ fontWeight: "600" }}>Email</th>
                   <th style={{ fontWeight: "600" }}>Adresse</th>
                   <th style={{ fontWeight: "600", whiteSpace: "nowrap" }}>Téléphone<button style={{ border: "none", background: "none", color: "#0243cd" }} onClick={() => setSortString('numerotel')}></button></th>
                   <th style={{ fontWeight: "600" }}>Provenances<button style={{ border: "none", background: "none", color: "#0243cd" }}></button></th>

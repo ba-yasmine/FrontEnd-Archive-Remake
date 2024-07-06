@@ -11,6 +11,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import {UserContext} from "../App"
 import { EntrepotContext } from './ManageWareHouses';
 import { ToastContainer, toast } from 'react-toastify';
+import './styleButton.css';
 
 
 
@@ -77,10 +78,13 @@ const AddEntrepot = ({}) => {
           />
                   <p style={{color:'red'}}>{errors.adresse?.message}</p>
         </Col>
+
         <Col xs="auto">
-          <Button type="submit" disabled={disableBTN}  style={{backgroundColor: '#0243cd', color: 'white', width:110,border:"2px solid #e5e7eb"}} className="mb-2">
-          {disableBTN ? "Patientez..." : "Ajouter"} 
-          </Button>
+          <div className="buttonStyle">
+              <Button type="submit" disabled={disableBTN}  style={{ color: 'white', width:110,border:"2px solid #e5e7eb"}} className="mb-2">
+              {disableBTN ? "Patientez..." : "Ajouter"}
+              </Button>
+          </div>
         </Col>
 
       </Row>

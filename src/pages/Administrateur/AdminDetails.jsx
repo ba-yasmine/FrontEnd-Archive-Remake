@@ -6,6 +6,8 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import NavCoordinateur from '../../components/navBarCoordinateur'
 import {AiOutlineUser} from "react-icons/ai"
 import {headerTitleContext} from '../../Layout/layout'
+import '../../components/styleButton.css';
+
 
 const AdminProfile = () => {
 
@@ -46,64 +48,69 @@ const AdminProfile = () => {
            {Lookup.length === 0  ? <div style={{margin:"auto"}}> <h4 style={{color:"#0243cd"}}>utilisateur introuvable</h4></div> :
           
           <div >
-          <div style={{ width: '80%', margin:'auto' }}>
+          <div style={{ width: '60%', margin:'auto' }}>
           <div style={{display:"flex", flexDirection:"column",margin:"auto", alignItems:'center',  }}>{boxesIco}  <h5 style={{textAlign:"center",marginTop:"20px",color:"#0243cd"}}> Profil utilisateur </h5></div>
    <br />
 
-        <ListGroup style={{margin:"auto"}} as="ol" >
+        <ListGroup id= "lists" style={{margin:"auto"}} as="ol" >
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)" , paddingBottom:'10px', paddingTop:'10px'}}
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div  style={{fontSize:"17px", fontWeight:"600"}}>Nom d'utilisateur</div>
-          {Lookup.name}
+          <div  style={{fontSize:"16px", fontWeight:"600"}}>Nom d'utilisateur</div>
+          <div style={{ fontSize:'14px'}} >{Lookup.name}</div>
+
         </div>
        
       </ListGroup.Item>
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)" , paddingBottom:'10px', paddingTop:'10px'}}
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div  style={{fontSize:"17px", fontWeight:"600"}}>Nom </div>
-          {Lookup.lastname}
+          <div  style={{fontSize:"16px", fontWeight:"600"}}>Nom </div>
+          <div style={{ fontSize:'14px'}} >{Lookup.lastname}</div>
+
         </div>
        
       </ListGroup.Item>
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)" , paddingBottom:'10px', paddingTop:'10px'}}
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div  style={{fontSize:"17px", fontWeight:"600"}}>Prenom</div>
-          {Lookup.firstname}
+          <div  style={{fontSize:"16px", fontWeight:"600"}}>Prenom</div>
+          <div style={{ fontSize:'14px'}} >{Lookup.firstname}</div>
+
         </div>
        
       </ListGroup.Item>
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)" , paddingBottom:'10px', paddingTop:'10px'}}
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div  style={{fontSize:"17px", fontWeight:"600"}}>Email</div>
-          {Lookup.email}
+          <div  style={{fontSize:"16px", fontWeight:"600"}}>Email</div>
+          <div style={{ fontSize:'14px'}} >{Lookup.email}</div>
+
         </div>
        
       </ListGroup.Item>
       
       <ListGroup.Item
-      style={{color:"#0243cd"}}
+      style={{color:"rgb(41,41,41)" , paddingBottom:'10px', paddingTop:'10px'}}
         as="li"
         className="d-flex justify-content-between align-items-start"
       >
         <div className="ms-2 me-auto">
-          <div  style={{fontSize:"17px", fontWeight:"600"}}>Poste</div>
-          {Lookup.roles[0].name}
+          <div  style={{fontSize:"16px", fontWeight:"600"}}>Poste</div>
+          <div style={{ fontSize:'14px'}} >{Lookup.roles[0].name}</div>
+
         </div>
         
       </ListGroup.Item>

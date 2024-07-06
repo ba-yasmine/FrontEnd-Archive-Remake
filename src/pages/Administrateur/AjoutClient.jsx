@@ -9,6 +9,7 @@ import Alert from 'react-bootstrap/Alert';
 import 'react-toastify/dist/ReactToastify.css';
 import {UserContext} from "../../App"
 import { IoIosAddCircleOutline } from "react-icons/io";
+import '../../components/styleButton.css';
 
 const AjoutClient = () => {
 
@@ -128,14 +129,16 @@ const submit = (e) => {
 
   return (
     <div style={{marginLeft:"10px" ,height:"44px"  }}>
-      <Button
-            style={{ height: "44px", backgroundColor: "#0243cd", textAlign: "center" }}
-            variant="primary"
-            onClick={handleShow}
-        >
-          <IoIosAddCircleOutline style={{ marginRight: '8px' }} />
-          utilisateur
-    </Button>
+      <div className="buttonStyle">
+          <Button
+                style={{ height: "44px", width: "105%",textAlign: "center", marginRight:'20px'  }}
+                variant="primary"
+                onClick={handleShow}
+            >
+              <IoIosAddCircleOutline style={{ marginRight: '8px'}} />
+              utilisateur
+          </Button>
+      </div>
       <Modal size="lg" show={show} onHide={()=>{handleClose(); setRes("")}}>
         { res.message === "L'utilisateur existe déja !" ?
       <Alert style={{backgroundColor:"#cd3c31", color:"white"}}>
@@ -154,7 +157,7 @@ const submit = (e) => {
             autoClose={3000}
             hideProgressBar={false}
             color="green"
-            
+
             />
         <Form style={{display: 'flex', justifyContent: 'space-between',alignItems: 'center', gap:"50px"}} onSubmit={submit}>
 
@@ -217,7 +220,7 @@ const submit = (e) => {
       </Form.Group > : <></>}
       <Form.Group  className="mb-3" controlId="formBasicEmail">
         <Form.Label>Société</Form.Label>
-       {<Dropdown style={{border: '1px solid #ced4da', borderRadius:"5px", }} required>
+       {<Dropdown style={{border: '1px solid #ced4da', borderRadius:"5px"}} required>
         <Dropdown.Toggle placeholder="Entrer description"required style={{outline: 'none',}} variant="Primary" id="dropdown-basic">
         {company.nomSociete}
       </Dropdown.Toggle>
@@ -247,9 +250,9 @@ const submit = (e) => {
         <Form.Control required  maxlength="30" onChange={e=> setPassword(e.target.value)} type="password" placeholder="Entrer mot de passe" />
       </Form.Group>
 
-      
-        {isLoading === true ? <h6 style={{fontWeight:"600", color: "#0243cd"}}>Patientez ... </h6> : <Button style={{backgroundColor:"#0243cd"}} variant="primary" type="submit">Ajouter utilisateur</Button>}  
-      
+        <div className="buttonStyle">
+            {isLoading === true ? <h6 style={{fontWeight:"600", color: "#0243c"}}>Patientez ... </h6> : <Button  variant="primary" type="submit">Ajouter utilisateur</Button>}
+        </div>
     
       </div>
       </Form>
