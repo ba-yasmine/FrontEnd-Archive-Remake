@@ -254,9 +254,9 @@ const GestionLogs = () => {
   style={{backgroundColor: 'white', border:'2px solid green', color:'green', paddingLeft:'20px', paddingRight:'20px', display:'flex', flexDirection:'row', width:'auto', paddingTop:"4px", paddingBottom:"2px"}}> <p style={{fontWeight:'600'}}>Exporter</p>   <TbFileExport style={{fontSize:'30px',marginLeft:'5px' }}/></Button>
     </div >
             
-            <Table style={{borderRadius:"10px", width:"100%", color:"#0243cd", margin:"auto"}} responsive>
+            <Table style={{borderRadius:"10px", width:"100%",margin:"auto"}} responsive>
      
-            <thead style={{height:"80px", backgroundColor:"#f2f6fe" , fontSize:"17px"}}>
+            <thead style={{height:"60px", fontSize:"17px"}}>
       <tr>
 
        

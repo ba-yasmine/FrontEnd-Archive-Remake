@@ -399,3 +399,33 @@ form.sign-in-form {
     left: 50%;
   }
 } */
+
+
+
+
+#loginBack:hover {
+    transform: scale(1.05);
+}
+
+#connecter{
+  .btn{
+    background-color: white;
+    border:none;
+    color:rgb(2,67,205);
+    width:200px;
+    padding: 10px;
+    margin:0 0 30px 0;
+    margin-top: 20px;
+    border: 2px solid rgb(224,224,224);
+    font-weight: 600;
+    transition: background-color 0.5s ease-out;
+  }
+
+}
+#connecter:hover{
+    .btn{
+        border:2px solid rgb(255,255,255);
+        color: white;
+        background-color: rgb(2,67,205);
+    }
+}

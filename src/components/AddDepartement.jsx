@@ -139,14 +139,13 @@ const AddDepartement = ({ companyId }) => {
                         />
                     </Col>
                     <Col xs="auto">
-                        <Button type="submit" style={{ marginBottom: '10px', backgroundColor: '#0243cd', color: 'white', width:110 }}>
+                        <Button type="submit" style={{ marginBottom: '10px', backgroundColor: '#0243cd', color: 'white', width:115 }}>
                             + Nouveau 
                         </Button>
                     </Col>
                 </Row>
             </Form>
-          {/* <h5 style={{ marginTop: "30px", marginBottom: "30px" }}>Départements de l'utilisateur: </h5> */}
-           
+
             <ToastContainer position="top-center" autoClose={3000} hideProgressBar={false} />
         </div>
     );

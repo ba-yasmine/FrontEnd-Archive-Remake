@@ -226,9 +226,9 @@ function scroll(){
     </div >
       
             
-            <Table style={{borderRadius:"10px", width:"100%", color:"#0243cd", margin:"auto"}} responsive>
+            <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
        
-            <thead style={{height:"50px", backgroundColor:"#f2f6fe" , fontSize:"15px"}}>
+            <thead style={{height:"50px" , fontSize:"15px"}}>
        <tr style={{borderRadius:"5px",margin:"auto",paddingTop:"15px"}}>
          
         
@@ -236,7 +236,7 @@ function scroll(){
        <th style={{fontWeight:"600"}}>Date de création <button style={{border:"none", background:"none", color:"#0243cd"}} onClick={()=>setSortString("creation_date") }  >{sortIco}</button></th>
        <th style={{fontWeight:"600"}}>Statut </th>
        <th style={{fontWeight:"600"}}>Nombre de boites </th>
-       <th style={{fontWeight:"600"}}>Numero de suivis<button style={{border:"none", background:"none", color:"#0243cd"}} onClick={()=>setSortString("creation_date") }  >{sortIco}</button></th>
+       <th style={{fontWeight:"600"}}>Numero de suivis</th>
        <th style={{fontWeight:"600"}}>Infos</th>
        <th style={{fontWeight:"600"}}>Suivis</th>
        

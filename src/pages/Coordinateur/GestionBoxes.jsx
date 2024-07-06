@@ -277,8 +277,8 @@ const GestionBoites = () => {
         }
         
         
-          <div>
-          <InputGroup  >
+       <div style={{ marginLeft: '15px' }}>
+        <InputGroup  >
         <InputGroup.Text id="basic-addon1">{searchIco}</InputGroup.Text>
         <Form.Control
         value={searchTerm} onChange={handleSearch}
@@ -286,8 +286,8 @@ const GestionBoites = () => {
           aria-label="Username"
           aria-describedby="basic-addon1"
         />
-      </InputGroup>
-          </div>
+       </InputGroup>
+      </div>
           
         </div>
         
@@ -308,9 +308,9 @@ const GestionBoites = () => {
     <AjouterBox/>
     </div >
           
-            <Table style={{borderRadius:"10px", width:"100%", color:"#0243cd", margin:"auto"}} responsive>
+            <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
      
-            <thead style={{height:"80px", backgroundColor:"#f2f6fe" , fontSize:"17px"}}>
+            <thead style={{height:"80px", fontSize:"17px"}}>
      <tr>
        
      <th style={{fontWeight:"600"}}>Code à barre </th>

@@ -223,9 +223,9 @@ const GestionUsers = () => {
     <AjouterClient/>
     </div >
             
-            <Table style={{borderRadius:"10px", width:"100%", color:"#0243cd", margin:"auto"}} responsive>
+            <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
      
-     <thead style={{height:"80px", backgroundColor:"#f2f6fe" , fontSize:"17px"}}>
+     <thead style={{height:"60px" , fontSize:"17px"}}>
       <tr>
     <th style={{fontWeight:"600"}}>Nom<button onClick={() => setSortString('firstname')} style={{border:"none", background:"none", color:"#0243cd"}}  ></button></th>
         <th style={{fontWeight:"600"}}>Prénom<button onClick={() => setSortString('lastname')} style={{border:"none", background:"none", color:"#0243cd"}}  ></button></th>

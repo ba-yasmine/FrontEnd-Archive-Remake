@@ -82,9 +82,11 @@ const AddEntrepot = ({}) => {
           {disableBTN ? "Patientez..." : "Ajouter"} 
           </Button>
         </Col>
+
       </Row>
-      
+
     </Form>
+
   )
 }
 

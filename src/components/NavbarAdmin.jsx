@@ -33,7 +33,7 @@ const NavBarCoordinateur = () => {
         }, {
             icon: <BiUser style={{fontSize: '30px'}}/>, name: 'Gestion utilisateurs', link: `/Admin/clients`
         }, {
-            icon: <TbActivity style={{fontSize: '30px'}}/>, name: "Logs d'activités", link: `Admin/usersLogs`
+            icon: <TbActivity style={{fontSize: '30px'}}/>, name: "Logs d'activités", link: `/Admin/usersLogs`
         }
 
     ]);
@@ -62,7 +62,7 @@ const NavBarCoordinateur = () => {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
-
+//Add styleMenu
     return (<div>
         <nav className="sidebar">
             <header>
@@ -116,19 +116,18 @@ const NavBarCoordinateur = () => {
                 </div>
                 <div className="bottom-content">
 
-                    <li >
-                        <a id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false" >
+                     <li >
+                         <a id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false" >
                             <i className='bx bx-user icon'></i>
                             <span className="text nav-text">Profil</span>
                         </a>
-                        <ul className="dropdown-menu dropdown-menu-light text-small shadow position-absolute" aria-labelledby="dropdownUser1" style={{width:"245px"}}>
+                        <ul className="dropdown-menu" aria-labelledby="dropdownUser1" style={{width:"245px"}}>
                             <li >
-                                <a  onClick={() =>navigate("/Admin/ProfileDetails")}  className="dropdown-item" href="#">Mon profil</a>
+                               <a  onClick={() =>navigate("/Admin/ProfileDetails")}  className="dropdown-item" href="#">Mon profil</a>
                             </li>
 
                             <li>
-                                <a  onClick={logout} className="dropdown-item" href="#">Se déconnecter</a>
-
+                               <a  onClick={logout} className="dropdown-item" href="#">Se déconnecter</a>
                             </li>
                         </ul>
                     </li>
@@ -139,9 +138,7 @@ const NavBarCoordinateur = () => {
 
 
 
-        <section className="home">
-            <div className="text">Dashboard Sidebar</div>
-        </section>
+
     </div>)
 }
 

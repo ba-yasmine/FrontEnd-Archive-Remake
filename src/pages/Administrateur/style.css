@@ -1,5 +1,5 @@
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #0243cd !important;
+    color: rgb(134,134,134) !important;
     opacity: 1; /* Firefox */
   }
 
@@ -18,15 +18,11 @@
     
    }
 
-   
-   
    #navLink:hover{
     color:white !important;
     background-color: #0243cd !important;
     transition:0.5s !important;
    }
-
-   
 
    @media screen and (max-width: 1117px) {
       body{
@@ -479,10 +475,5 @@ margin-bottom:80px;
                 font-size: 15px;
                 height:40px !important;
             }
-     
 
-          
-     
-             
-          
              }

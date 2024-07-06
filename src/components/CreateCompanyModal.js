@@ -1,3 +1,4 @@
+
 import React, { useState,useContext, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -37,7 +38,7 @@ function CreateCompanyModal() {
   const { register, handleSubmit, formState:{ errors } } = useForm({
     resolver: yupResolver(schema)
   });
-   
+
  useEffect(()=>{
   show && axios.get(`${process.env.REACT_APP_HOST_VAR}rest/entrepot/getAllEntrepot`,{headers:{
     'Authorization':  "Bearer" + userAuth.token
@@ -47,10 +48,10 @@ function CreateCompanyModal() {
     SetEntrepotList(response.data)
     SetEntrepot(response.data[0].id)
   }
- 
-  
+
+
       ).catch((err) => {
-      
+
           SetEntrepot(err)
       })
  },[show])
@@ -60,7 +61,7 @@ function CreateCompanyModal() {
   console.log("Form data:", data);  // Log the form data to inspect its content
   setDisableBTN(true);
 
-  data.willaya = {"id": selectedWillaya} 
+  data.willaya = {"id": selectedWillaya}
   data.commune = {"id": selectedCommune}
 
      console.log(data)
@@ -85,7 +86,7 @@ function CreateCompanyModal() {
 const [willayas, setWillayas] = useState([]);
   const [selectedWillaya, setSelectedWillaya] = useState('');
   const [selectedCommune, setSelectedCommune] = useState('');
-      
+
     const [communes, setCommunes] = useState([]);
 
     useEffect(() => {
@@ -110,7 +111,7 @@ const [willayas, setWillayas] = useState([]);
         setSelectedCommune(communeId);
       };
 
-      
+
 
 
   return (
@@ -123,22 +124,22 @@ const [willayas, setWillayas] = useState([]);
           <Modal.Title>Ajouter une société</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-      
+
         <div>
-          
-          <Form onSubmit={handleSubmit(onSubmit)}>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+
+       <form onSubmit={handleSubmit(onSubmit)}>
+       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Nom société:</Form.Label>
         <Form.Control {...register("nomSociete")} />
         <p style={{color:'red'}}>{errors.nomSociete?.message}</p>
       </Form.Group>
-     
+
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Contact Principal:</Form.Label>
         <Form.Control {...register("contactprincipal")} />
         <p style={{color:'red'}}>{errors.contactprincipal?.message}</p>
-      </Form.Group> 
+      </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email:</Form.Label>
@@ -152,18 +153,18 @@ const [willayas, setWillayas] = useState([]);
         <p style={{color:'red'}}>{errors.numerotel?.message}</p>
       </Form.Group>
 
-     
+
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Entrepôt: </Form.Label>
         <Form.Select required onChange={(e)=> { SetEntrepot(e.target.value)}}   aria-label="Default select example">
-     
+
           {entrepotList?.map((el,id) =>{
            return  <option key={id} value={el.id}>{el.name}</option>
           })}
-         
+
        </Form.Select>
-      
-      
+
+
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -177,32 +178,32 @@ const [willayas, setWillayas] = useState([]);
           <p style={{color:'red'}}>{errors.codepostale?.message}</p>
       </Form.Group>
 
-      
+
     <WillayaSelect register={register} errors={errors} willayas={willayas} onChange={handleWillayaChange} />
     <CommuneSelect register={register} errors={errors} communes={communes} onChange={handleCommuneChange}/>
-      
 
-      <Button disabled={disableBTN} style={{backgroundColor:'#0243cd', float:'right'}} variant="primary" type="submit">
-      {disableBTN ? "Patientez..." : "confirmer"} 
+
+      <Button disabled={disableBTN} style={{width:'100%', backgroundColor:'#0243cd', float:'right'}} variant="primary" type="submit">
+      {disableBTN ? "Patientez..." : "confirmer"}
       </Button>
-    </Form>
-    <ToastContainer 
+    </form>
+    <ToastContainer
             position="top-center"
             autoClose={3000}
             hideProgressBar={false}
             color="green"
-            
+
             />
         </div>
-      
-     
-     
+
+
+
         </Modal.Body>
-    
+
         </Modal >
     </>
    )
-  
+
 }
 
 export default CreateCompanyModal;

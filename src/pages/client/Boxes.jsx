@@ -253,7 +253,7 @@ const BoitesClient = () => {
         }
         
         
-          <div>
+          <div style={{ marginLeft: '15px' }}>
           <InputGroup  >
         <InputGroup.Text id="basic-addon1">{searchIco}</InputGroup.Text>
         <Form.Control
@@ -283,9 +283,9 @@ const BoitesClient = () => {
      
     </Form.Select>
     </div >
-            <Table style={{borderRadius:"10px", width:"100%", color:"#0243cd", margin:"auto"}} responsive>
+            <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
      
-            <thead style={{height:"50px", backgroundColor:"#f2f6fe" , fontSize:"14px"}}>
+            <thead style={{height:"50px" , fontSize:"14px"}}>
        <tr style={{borderRadius:"5px",margin:"auto",paddingTop:"15px"}}>
          
        <th style={{fontWeight:"600"}}>Code à barre </th>

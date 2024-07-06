@@ -10,6 +10,9 @@ import { BiHomeAlt, BiBox} from "react-icons/bi";
 import { MdOutlineBatchPrediction} from "react-icons/md";
 import "../pages/Administrateur/style.css"
 import {FiMenu} from "react-icons/fi"
+import {TbBuildingFactory, TbActivity} from "react-icons/tb";
+import "./styleMenu.css"
+
 
 const NavBarCoordinateur = () => {
   function deleteCookie() {
@@ -26,20 +29,12 @@ const NavBarCoordinateur = () => {
   const [navData, setNavData] = useState([
 
     {
-      icon: <BiHomeAlt  style={{fontSize:'30px'}}/>,
-      name:'Accueil',
-      link:`/Coordinateur/Accueil`
-    },
-    {
-      icon: <MdOutlineBatchPrediction  style={{fontSize:'30px'}}/>,
-      name:'Gérer lots',
-      link:`/Coordinateur/demandes`
-    },
-    {
-      icon: <BiBox  style={{fontSize:'30px'}}/>,
-      name:'Gérer boites',
-      link:`/Coordinateur/boxes`
-    }
+      icon: <TbBuildingFactory style={{fontSize: '30px'}}/>, name: 'Accueil', link: `/Coordinateur/Accueil`
+     }, {
+      icon: <TbBuildingFactory style={{fontSize: '30px'}}/>, name: 'Gérer lots', link: `/Coordinateur/demandes`
+     }, {
+      icon: <TbActivity style={{fontSize: '30px'}}/>, name: "Gérer boites", link: `/Coordinateur/boxes`
+     }
 
   ]);
 
@@ -68,79 +63,86 @@ const NavBarCoordinateur = () => {
   }, []);
 
  
- 
-  return (
-    
-   
-    <div className="container-fluid" style={{ backgroundColor: 'white' , color:'#33475a',overflowY:'hidden', zIndex:"9900"  }}>
-    <div className="row flex-nowrap">
-        <div className="col-auto col-md-3 col-xl-2 px-sm-2 px-0 ">
-            <div className="d-flex flex-column  align-items-sm-start  pt-2 text-white min-vh-100 w-100">
-             
-                <ul className="nav nav-pills flex-column mb-auto mb-0  align-items-sm-start" id="menu">
-               
-                <h4 style={{width:"150px",marginRight:"10px", color:"#0243cd"}}  className="d-flex align-items-center pb-3 mb-md-0 me-md-auto mt-2  text-decoration-none">
-                    <span className="fs-5 d-none d-sm-inline"><FiMenu/> Menu</span>
-                </h4>
-                   
-                   { navData.map((el, idx) =>
-                    
-                    <NavLink key={idx}
-                   to={el.link}
-                   style={({ isActive, isPending }) => {
-                    return {
-                      backgroundColor: isActive ? "#0243cd" : "white",
-                      color: isActive ? "white" : "#0243cd",
-                      borderRadius:'7px',
-                      textDecoration:'none',
-                      marginTop:'30px',
-                      paddingTop:'8px',
-                      paddingBottom:'8px',
-                      paddingLeft:'3px',
-                      width:'100%',
-                      
-                      
-                    
-                    };
-                   }}
-                      id="navLink">
-                <h5> {!isMobile ? el.name : el.icon} </h5>
-                 </NavLink>
-                           )
-                 
-                 }
-                   
-                
-                  
-                
-                  
-                    
-                </ul>
-                
-                <div className="dropdown pb-4" style={{position:"absolute", bottom:"0"}}>
-                    <a  className="d-flex align-items-center  text-decoration-none " id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                       
-                        <span className="mx-1">{userProfil}</span>
-                    </a>
-                    <ul className="dropdown-menu dropdown-menu-light text-small shadow position-absolute" aria-labelledby="dropdownUser1">
-                        <li >
-                        <a  onClick={() =>navigate("/Coordinateur/profileDetails")} className="dropdown-item" href="#">Mon profil</a>
-                        </li>
-                        <li>
-                            
-                        </li>
-                        <li>
-                          <a  onClick={logout} className="dropdown-item" href="#">se déconnecter</a>
-                          
+//Add styleMenu
+    return (<div>
+        <nav className="sidebar">
+            <header>
+                <div className="image-text">
+                <span className="image">
+                    <div style={{
+                        width: '40px',
+                        height: '40px',
+                        backgroundColor: '#4CAF50',
+                        borderRadius: '8px',
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        textAlign: 'center',
+                        color: '#fff' ,
+                        fontFamily: "Poppins",
+                        fontWeight:"600"
+                    }}>
+                     {userAuth.email ? userAuth.email.substring(0, 2).toUpperCase() : "N/A"}
+                  </div>
+                </span>
+                    <div className="text bx-menu-alt">
+                        <span className="name">Menu</span>
+                    </div>
+                </div>
+            </header>
+
+
+            <div className="menu-bar">
+                <div className="menu">
+                    <ul className="menu-links">
+                          <li className="nav-link">
+                             <NavLink to="/Coordinateur/Accueil">
+                             <i className="bx bx-home-alt icon"></i>
+                             <span className="text nav-text">Accueil</span>
+                             </NavLink>
                           </li>
+                        <li className="nav-link">
+                            <NavLink to="/Coordinateur/demandes">
+                                <i className="bx bx-package icon"></i>
+                                <span className="text nav-text">Gérer lots</span>
+                            </NavLink>
+                        </li>
+                        <li className="nav-link">
+                            <NavLink to="/Coordinateur/boxes">
+                                <i className="bx bx-box icon"></i>
+                                <span className="text nav-text">Gérer boites</span>
+                            </NavLink>
+                        </li>
+
+
                     </ul>
                 </div>
+                   <div className="bottom-content">
+
+                    <li >
+                        <a id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false" >
+                            <i className='bx bx-user icon'></i>
+                            <span className="text nav-text">Profil</span>
+                        </a>
+                        <ul className="dropdown-menu dropdown-menu-light text-small shadow position-absolute" aria-labelledby="dropdownUser1" style={{width:"245px"}}>
+                            <li >
+                                <a  onClick={() =>navigate("/Coordinateur/profileDetails")}  className="dropdown-item" href="#">Mon profil</a>
+                            </li>
+
+                            <li>
+                                 <a  onClick={logout} className="dropdown-item" href="#">Se déconnecter</a>
+                            </li>
+                         </ul>
+                     </li>
+                </div>
+
             </div>
-        </div>
-      
-    </div>
-</div>
-  )
+        </nav>
+
+
+
+
+    </div>)
 }
 
 export default NavBarCoordinateur

@@ -262,13 +262,7 @@ const GestionUsers = () => {
           </div>
           
         </div>
-        
-     
-    
-          
-        
-        
-     
+
       <hr />
     
       {loading === true ? <div style={{display: 'flex',justifyContent:'center',paddingTop:"100px"}}><Spinner animation="border"  variant="primary" /> </div> : items.length !== 0  ? 
@@ -284,17 +278,17 @@ const GestionUsers = () => {
      
     </Form.Select>
     </div >
-            <Table style={{borderRadius:"10px", width:"100%", color:"#0243cd", margin:"auto"}} responsive>
+            <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
      
-            <thead style={{height:"80px", backgroundColor:"#f2f6fe" , fontSize:"17px"}}>
+            <thead style={{height:"80px", fontSize:"17px"}}>
        <tr>
          
         
        <th style={{fontWeight:"600"}}>Type de requête</th>
        <th style={{fontWeight:"600"}}>Nombre de boites </th>
-       <th style={{fontWeight:"600"}}>Date de création<button style={{border:"none", background:"none", color:"#0243cd"}} onClick={()=>setSortString("creation_date") } >{sortIco}</button></th>
+       <th style={{fontWeight:"600"}}>Date de création</th>
        <th style={{fontWeight:"600"}}>Statut</th>
-       <th style={{fontWeight:"600"}}>Numéro de suivi <button style={{border:"none", background:"none", color:"#0243cd"}} onClick={()=>setSortString("	id") } >{sortIco}</button></th>
+       <th style={{fontWeight:"600"}}>Numéro de suivi</th>
        <th style={{fontWeight:"600"}}>Société </th>
        <th style={{fontWeight:"600"}}>Consulter</th>
        <th style={{fontWeight:"600"}}>Gérer</th>

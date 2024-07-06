@@ -12,6 +12,7 @@ import "../Administrateur/style.css"
 import InputGroup from 'react-bootstrap/InputGroup';
 import { RiLockPasswordLine} from "react-icons/ri";
 import { BiLogInCircle} from "react-icons/bi";
+import './Loginstyle.css';
 
 
 const LoginPage = () => {
@@ -109,12 +110,11 @@ const LoginPage = () => {
 
 
         
-
   return (
-    <div style={{ height:"100vh", backgroundRepeat:"repeat",backgroundSize:"cover", overflowY:"hidden", display:'flex', justifyContent:"center",alignItems:'center',  }}>
-      <div id="loginBack" style={{boxShadow:"rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px", width:"auto", padding:"20px", background: "linear-gradient(to right, #f1c93a 50%, #0243de 50%)",backgroundSize:"cover", borderRadius:"10px"}}>
+    <div style={{height:"100vh",width:"100%", backgroundRepeat:"repeat",backgroundSize:"cover", overflowY:"hidden", display:'flex', justifyContent:"center",alignItems:'center', backgroundColor:"rgb(244, 244, 254)"}}>
+      <div id="loginBack" style={{boxShadow:"3px 3px 10px rgb(0,0,48)", width:"auto", padding:"20px", background: "linear-gradient(90deg, #f1c93a, #0243de )",backgroundSize:"cover", transition: "transform 0.5s ease-out",}}>
       <div style={{ width: "95%", display: "flex", flexDirection: "column", alignItems: "center", padding: "7px", backgroundColor: "white", borderRadius: "10px", margin: "auto" }}>
-      <div style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <div style={{ width: "100%", display: "flex", justifyContent: "space-between", alignItems: "center" , padding:"8px 15px" }}>
         <img id="archivy" style={{ width: width <= 750 ? "25vw" : "10vw" }} src="https://i.postimg.cc/qq0T7nbP/logoarch.png" alt="" height="auto" />
         <img id="capturedoc" style={{ width: width <= 750 ? "25vw" : "10vw" }} src="https://i.postimg.cc/q7kbpC3j/cdlogo.png" alt="" height="auto" />
       </div>
@@ -133,7 +133,7 @@ const LoginPage = () => {
     
         <InputGroup.Text id="basic-addon1" style={{backgroundColor:'white'}}>@</InputGroup.Text>
         
-        <Form.Control style={{height:"50px", borderRadius:"8px", borderTopLeftRadius:"0px" , borderBottomLeftRadius:"0px"}}required onChange={e=>setmail(e.target.value)} type="email" placeholder="example@mail.com" maxlength="50" minlength="10" />
+        <Form.Control style={{height:"50px", borderRadius:"8px", borderTopLeftRadius:"0px" , borderBottomLeftRadius:"0px", fontWeight:'300', fontSize:'16px'}}required onChange={e=>setmail(e.target.value)} type="email" placeholder="example@mail.com" maxlength="50" minlength="10" />
         <br />
         {msg === true ? <p style={{color:"red"}} >le format de l'email est invalide</p> : <p></p>}
         </InputGroup>
@@ -144,17 +144,18 @@ const LoginPage = () => {
         
     <InputGroup.Text id="basic-addon1" style={{backgroundColor:'white'}}><RiLockPasswordLine /></InputGroup.Text>
        
-        <Form.Control style={{height:"50px",borderRadius:"8px", borderTopLeftRadius:"0px" , borderBottomLeftRadius:"0px" ,}}  required onChange={e=>setpassword(e.target.value)} type="password" placeholder="**********"  maxlength="20" />  
+        <Form.Control style={{height:"50px",borderRadius:"8px", borderTopLeftRadius:"0px" , borderBottomLeftRadius:"0px",fontWeight:'300', fontSize:'16px'}}  required onChange={e=>setpassword(e.target.value)} type="password" placeholder="**********"  maxlength="20" />
         <br />
         {msg1 === true ? <p style={{color:"red"}}>le mot de passe doit avoir minimum 8 caractères, une majuscule et un chiffre</p> : <p></p>}
         </InputGroup>
           
      <br />
       <div style={{display: 'flex' , justifyContent: 'space-between' ,alignItems: 'center'}} id="connect">
-      <Button style={{backgroundColor:"#ffffff", borderRadius:'11px', width:"50%", padding:"10px", color:"#0243cd", border:"2px solid #e5e7eb ", fontWeight:"600"}}  variant="primary" type="submit">
+      <div id="connecter">
+      <Button variant="primary" type="submit">
          Se connecter
       </Button>
-      
+      </div>
       
       <Resetp email={mail}/>
       </div>

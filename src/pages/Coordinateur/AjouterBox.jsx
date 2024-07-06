@@ -153,8 +153,8 @@ const onSubmit = (data) => {
 
   return (
     <div style={{  }}>
-        <Button style={{ backgroundColor:"#0243cd", width:'150px'}} variant="primary" onClick={handleShow}>
-        Ajouter une boite
+        <Button style={{ backgroundColor:"#0243cd", width:'170px'}} variant="primary" onClick={handleShow}>
+         Ajouter une boite
       </Button> 
       <Modal size="lg"   show={show} onHide={()=>{handleClose(); setRes("")}}>
       <ToastContainer 

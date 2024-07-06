@@ -124,8 +124,8 @@ const GestionSocietes = () => {
                 <option value='100'>100</option>
               </Form.Select>
             </div>
-            <Table style={{ borderRadius: "10px", width: "100%", color: "#0243cd", margin: "auto" }} responsive>
-              <thead style={{ height: "80px", backgroundColor: "#f2f6fe", fontSize: "17px" }}>
+            <Table style={{ borderRadius: "10px", width: "100%", margin: "auto"}} responsive>
+              <thead style={{ height: "60px", fontSize: "17px" }}>
                 <tr>
                   <th style={{ fontWeight: "600" }}>Société<button style={{ border: "none", background: "none", color: "#0243cd" }} onClick={() => setSortString('nomSociété')}></button></th>
                   <th style={{ fontWeight: "600", whiteSpace: "nowrap" }}>Contact Principal<button style={{ border: "none", background: "none", color: "#0243cd" }} onClick={() => setSortString('contactprincipal')}></button></th>

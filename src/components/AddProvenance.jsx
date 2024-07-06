@@ -55,17 +55,19 @@ const AddProvenance = ({companyId}) => {
           {...register("adresse")}
             className="mb-2"
             id="inlineFormInput"
-            placeholder="adresse ..."
+            placeholder="nom de la provenance"
           />
                   <p style={{color:'red'}}>{errors.adresse?.message}</p>
         </Col>
-        <Col xs="auto">
-          <Button type="submit"  style={{backgroundColor:'white',border:"2px solid #e5e7eb", color:'#0243cd', fontWeight:"600"}} className="mb-3">
-            ajouter
+
+          <Button type="submit"  style={{ margin: '11px', backgroundColor: '#0243cd', color: 'white', width:'150px'}} className="mb-3">
+            Ajouter
           </Button>
-        </Col>
+           <hr />
+
       </Row>
     </Form>
+
   )
 }
 
