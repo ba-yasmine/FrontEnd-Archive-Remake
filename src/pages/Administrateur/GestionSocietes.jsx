@@ -17,7 +17,6 @@ import CompanyContract from '../../components/CompanyContracts';
 import { headerTitleContext } from '../../Layout/layout';
 import NoResults from '../../components/noResultsFound';
 import WareHousesModal from '../../components/ManageWareHouses';
-
 const ITEMS_PER_PAGE = 10;
 
 const GestionSocietes = () => {
@@ -125,7 +124,7 @@ const GestionSocietes = () => {
               </Form.Select>
             </div>
             <Table style={{ borderRadius: "10px", width: "100%", margin: "auto"}} responsive>
-              <thead style={{ height: "60px", fontSize: "17px" }}>
+              <thead style={{ height: "60px", fontSize: "15px"}}>
                 <tr>
                   <th style={{ fontWeight: "600" }}>Société</th>
                   <th style={{ fontWeight: "600", whiteSpace: "nowrap" }}>Contact Principal<button style={{ border: "none", background: "none", color: "#0243cd" }} onClick={() => setSortString('contactprincipal')}></button></th>
@@ -137,7 +136,7 @@ const GestionSocietes = () => {
                   <th style={{ fontWeight: "600" }}>Départements</th>
                 </tr>
               </thead>
-              <tbody>
+              <tbody style={{fontSize:"14px"}}>
                 {items.length > 0 ? items.map((el, id) => (
                   <tr key={id}>
                     <td>{el?.nomSociete}</td>

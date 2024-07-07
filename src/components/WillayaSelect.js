@@ -2,7 +2,7 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 
 const WillayaSelect = ({ willayas, onChange, register, errors}) => (
-    <Form.Group className='mb-2'>
+    <Form.Group className='mb-4'>
     <Form.Label >Wilaya: </Form.Label>
     <Form.Select
 

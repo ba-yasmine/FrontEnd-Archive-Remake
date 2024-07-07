@@ -94,7 +94,7 @@ const CompanyContracts = ({company}) => {
             
             />
 <h4 style={{marginTop:"30px", marginBottom:"30px"}}>Ajouter un contrat: </h4>
-<InputGroup className="mb-3" style={{display:"flex", flexWrap: "wrap"}}>
+<InputGroup  style={{display:"flex", flexWrap: "wrap"}}>
        <input type="date"  style={{border:"1px solid #dee2e6"}}
          onChange={e=> setDateDebut(e.target.value)}
           placeholder="saisir date debut"

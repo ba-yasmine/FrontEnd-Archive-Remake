@@ -54,7 +54,7 @@ const AddProvenance = ({companyId}) => {
           </Form.Label>
           <Form.Control
           {...register("adresse")}
-            className="mb-2"
+            className="mb-10"
             id="inlineFormInput"
             placeholder="nom de la provenance"
           />

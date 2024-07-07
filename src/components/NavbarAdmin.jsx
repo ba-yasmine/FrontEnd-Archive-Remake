@@ -63,21 +63,22 @@ const NavBarCoordinateur = () => {
     }, []);
 
 //Add styleMenu
-    return (<div>
-        <nav className="sidebar">
+    return (
+    <div>
+        <nav className="sidebar" >
             <header>
                 <div className="image-text">
                 <span className="image">
                     <div style={{
                         width: '40px',
                         height: '40px',
-                        backgroundColor: '#4CAF50',
+                        backgroundColor: 'rgb(235, 209, 16)',
                         borderRadius: '8px',
                         display: 'flex',
                         justifyContent: 'center',
                         alignItems: 'center',
                         textAlign: 'center',
-                        color: '#fff' ,
+                        color: 'black' ,
                         fontFamily: "Poppins",
                         fontWeight:"600"
                     }}>
@@ -135,9 +136,6 @@ const NavBarCoordinateur = () => {
 
             </div>
         </nav>
-
-
-
 
     </div>)
 }

@@ -1,4 +1,3 @@
-
 import React, { useState,useContext, useEffect } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
@@ -113,69 +112,53 @@ const [willayas, setWillayas] = useState([]);
       };
 
 
-
-
   return (
     <>
      <div className="buttonStyle">
-         <Button  onClick={handleShow}>
+         <Button onClick={handleShow}>
           Ajouter société
           </Button>
      </div>
-      <Modal style={{color:'#0243cd'}} show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Ajouter une société</Modal.Title>
+      <Modal  style={{color:'#0243cd'}} show={show} onHide={handleClose}>
+        <Modal.Header className="center" closeButton>
+              <Modal.Title >Ajouter une société</Modal.Title>
         </Modal.Header>
         <Modal.Body>
 
         <div>
 
        <form onSubmit={handleSubmit(onSubmit)}>
-       <Form.Group className="mb-3" controlId="formBasicEmail">
+       <Form.Group className="mb-4" controlId="formBasicEmail">
         <Form.Label>Nom société:</Form.Label>
         <Form.Control {...register("nomSociete")} />
         <p style={{color:'red'}}>{errors.nomSociete?.message}</p>
       </Form.Group>
 
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-4" controlId="formBasicEmail">
         <Form.Label>Contact Principal:</Form.Label>
         <Form.Control {...register("contactprincipal")} />
         <p style={{color:'red'}}>{errors.contactprincipal?.message}</p>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-4" controlId="formBasicEmail">
         <Form.Label>Email:</Form.Label>
         <Form.Control {...register("email")} />
         <p style={{color:'red'}}>{errors.email?.message}</p>
       </Form.Group>
 
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-4" controlId="formBasicEmail">
         <Form.Label>Téléphone:</Form.Label>
         <Form.Control {...register("numerotel")} />
         <p style={{color:'red'}}>{errors.numerotel?.message}</p>
       </Form.Group>
 
-
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Entrepôt: </Form.Label>
-        <Form.Select required onChange={(e)=> { SetEntrepot(e.target.value)}}   aria-label="Default select example">
-
-          {entrepotList?.map((el,id) =>{
-           return  <option key={id} value={el.id}>{el.name}</option>
-          })}
-
-       </Form.Select>
-
-
-      </Form.Group>
-
-      <Form.Group className="mb-3" controlId="formBasicEmail">
+      <Form.Group className="mb-4" controlId="formBasicEmail">
           <Form.Label>Adresse: </Form.Label>
           <Form.Control {...register("siege")} />
           <p style={{color:'red'}}>{errors.siege?.message}</p>
       </Form.Group>
-      <Form.Group className="mb-3" controlId="adresse">
+      <Form.Group className="mb-4" controlId="adresse">
           <Form.Label>Code Postale:</Form.Label>
           <Form.Control {...register("codepostale")} />
           <p style={{color:'red'}}>{errors.codepostale?.message}</p>
@@ -185,8 +168,18 @@ const [willayas, setWillayas] = useState([]);
     <WillayaSelect register={register} errors={errors} willayas={willayas} onChange={handleWillayaChange} />
     <CommuneSelect register={register} errors={errors} communes={communes} onChange={handleCommuneChange}/>
 
+    <Form.Group className="mb-4" controlId="formBasicEmail">
+            <Form.Label>Entrepôt: </Form.Label>
+            <Form.Select required onChange={(e)=> { SetEntrepot(e.target.value)}}   aria-label="Default select example">
+
+              {entrepotList?.map((el,id) =>{
+               return  <option key={id} value={el.id}>{el.name}</option>
+              })}
+
+        </Form.Select>
+      </Form.Group>
       <div className="buttonStyle">
-      <Button disabled={disableBTN} style={{width:'100%', float:'right'}} variant="primary" type="submit">
+      <Button disabled={disableBTN} style={{width:'83%', float:'right' , margin: '40px', marginTop:"30px", marginBottom:"30px"}} variant="primary" type="submit">
       {disableBTN ? "Patientez..." : "confirmer"}
       </Button>
       </div>
@@ -196,12 +189,8 @@ const [willayas, setWillayas] = useState([]);
             autoClose={3000}
             hideProgressBar={false}
             color="green"
-
             />
         </div>
-
-
-
         </Modal.Body>
 
         </Modal >

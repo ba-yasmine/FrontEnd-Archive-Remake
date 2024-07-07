@@ -225,7 +225,7 @@ const GestionUsers = () => {
             
             <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
      
-     <thead style={{height:"60px" , fontSize:"17px"}}>
+     <thead style={{height:"60px" , fontSize:"15px"}}>
       <tr>
     <th style={{fontWeight:"600"}}>Nom<button onClick={() => setSortString('firstname')} style={{border:"none", background:"none", color:"#0243cd"}}  ></button></th>
         <th style={{fontWeight:"600"}}>Prénom<button onClick={() => setSortString('lastname')} style={{border:"none", background:"none", color:"#0243cd"}}  ></button></th>
@@ -237,7 +237,7 @@ const GestionUsers = () => {
         <th style={{fontWeight:"600"}}>Gestion</th>
         </tr>
         </thead>
-    <tbody>
+    <tbody style={{fontSize:"14px"}}>
       {items.length > 0 ? items.map((el,id)=>{
     return (
      <tr key={id}>
@@ -247,16 +247,16 @@ const GestionUsers = () => {
         <td>{el.email}</td>
         <td>{el.company !== null ? el.company?.nomSociete : "CaptureDoc"}</td>
         <td> 
-          { el.roles[0].name === "ROLE_CLIENT" ? el.departementsList.length === 0 ? <p style={{fontWeight: "600"}}>Aucun département</p> 
+          { el.roles[0].name === "ROLE_CLIENT" ? el.departementsList.length === 0 ? <p style={{fontWeight: "500",fontSize: "14px"}}>Aucun département</p>
           :
-          <DropdownButton  variant="Primary" style={{backgroundColor:"white", color:"#0243cd"}} title="liste départements">
+          <DropdownButton  variant="Primary" style={{backgroundColor:"white", color:"#0243cd",fontSize: "14px"}} title="liste départements">
           {el.departementsList?.map((el,id)=>{
              return ( 
              <Dropdown.Item key={id}> {el.nom}</Dropdown.Item>)
              }) }
          </DropdownButton>
           
-         : <p style={{fontWeight:"600"}}>non concerné</p> }
+         : <p style={{fontWeight:"500"}}>non concerné</p> }
        
         </td>
         <td>{el.roles[0].name}</td>

@@ -2,7 +2,7 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 
 const CommuneSelect = ({ communes , onChange  , register , errors}) => (
-    <Form.Group className="mb-3">
+    <Form.Group className="mb-4">
   <Form.Label>Commune: </Form.Label>
   <Form.Select  {...register('communeId')}  onChange={onChange} className="form-control">
     <option value="">Select Commune</option>

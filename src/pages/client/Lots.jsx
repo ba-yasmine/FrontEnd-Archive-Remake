@@ -233,7 +233,7 @@ function scroll(){
          
         
        <th style={{fontWeight:"600"}}>Type de demande</th>
-       <th style={{fontWeight:"600"}}>Date de création <button style={{border:"none", background:"none", color:"#0243cd"}} onClick={()=>setSortString("creation_date") }  >{sortIco}</button></th>
+       <th style={{fontWeight:"600"}}>Date de création</th>
        <th style={{fontWeight:"600"}}>Statut </th>
        <th style={{fontWeight:"600"}}>Nombre de boites </th>
        <th style={{fontWeight:"600"}}>Numero de suivis</th>
@@ -242,10 +242,10 @@ function scroll(){
        
        </tr>
      </thead>
-     <tbody style={{color:"rgb(2, 67, 205)"}}>
+     <tbody style={{color:"black", fontSize: "14px"}}>
        {items.length > 0 ? items.map((el,id)=>{
      return (
-      <tr style={{ color:"#0243cd" }}key={id}>
+      <tr key={id}>
       
          
           <td>{el.requestType}</td>

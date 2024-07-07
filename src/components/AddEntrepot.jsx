@@ -60,7 +60,7 @@ const AddEntrepot = ({}) => {
           </Form.Label>
           <Form.Control
           {...register("name")}
-            className="mb-2"
+            className="mb-10"
             id="inlineFormInput"
             placeholder="Nom "
           />
@@ -72,7 +72,7 @@ const AddEntrepot = ({}) => {
           </Form.Label>
           <Form.Control
           {...register("adresse")}
-            className="mb-2"
+            className="mb-10"
             id="inlineFormInput"
             placeholder="Adresse "
           />
@@ -81,7 +81,7 @@ const AddEntrepot = ({}) => {
 
         <Col xs="auto">
           <div className="buttonStyle">
-              <Button type="submit" disabled={disableBTN}  style={{ color: 'white', width:110,border:"2px solid #e5e7eb"}} className="mb-2">
+              <Button type="submit" disabled={disableBTN}  style={{ color: 'white', width:110,border:"2px solid #e5e7eb"}} className="mb-10">
               {disableBTN ? "Patientez..." : "Ajouter"}
               </Button>
           </div>

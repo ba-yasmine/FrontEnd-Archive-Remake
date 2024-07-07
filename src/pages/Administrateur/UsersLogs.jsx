@@ -259,10 +259,9 @@ const GestionLogs = () => {
             
             <Table style={{borderRadius:"10px", width:"100%",margin:"auto"}} responsive>
      
-            <thead style={{height:"60px", fontSize:"17px"}}>
+            <thead style={{height:"60px", fontSize:"15px"}}>
       <tr>
 
-       
         <th style={{fontWeight:"600"}}>Nom d'utilisateur<button style={{border:"none", background:"none", color:"#0243cd"}}  ></button></th>
         <th style={{fontWeight:"600"}}>Date de l'action<button style={{border:"none", background:"none", color:"#0243cd"}}  ></button></th>
         <th style={{fontWeight:"600"}}>Description de l'action<button style={{border:"none", background:"none", color:"#0243cd"}} ></button></th>
@@ -272,7 +271,7 @@ const GestionLogs = () => {
        
       </tr>
     </thead>
-    <tbody>
+    <tbody style={{color:"black", fontSize: "14px"}}>
       {items.length > 0 ? items.map((el,id)=>{
     return (
      <tr key={id}>

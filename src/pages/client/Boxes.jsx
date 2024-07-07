@@ -285,7 +285,7 @@ const BoitesClient = () => {
     </div >
             <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
      
-            <thead style={{height:"50px" , fontSize:"14px"}}>
+            <thead style={{height:"50px" , fontSize:"15px"}}>
        <tr style={{borderRadius:"5px",margin:"auto",paddingTop:"15px"}}>
          
        <th style={{fontWeight:"600"}}>Code à barre </th>
@@ -298,10 +298,10 @@ const BoitesClient = () => {
        <th>Historique</th>
        </tr>
      </thead>
-     <tbody style={{color:"rgb(2, 67, 205)"}}>
+     <tbody style={{color:"black", fontSize: "14px"}}>
        {items.length > 0 ? items.map((el,id)=>{
      return (
-      <tr style={{ color:"#0243cd" }}key={id}>
+      <tr key={id}>
       
       <td>{el.codeBarre === null  ? <p style={{color:"red", fontWeight:"600"}}>Pas de code</p> : el.codeBarre}</td> 
       <td>

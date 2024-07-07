@@ -280,10 +280,8 @@ const GestionUsers = () => {
     </div >
             <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
      
-            <thead style={{height:"80px", fontSize:"17px"}}>
+            <thead style={{height:"80px", fontSize:"15px"}}>
        <tr>
-         
-        
        <th style={{fontWeight:"600"}}>Type de requête</th>
        <th style={{fontWeight:"600"}}>Nombre de boites </th>
        <th style={{fontWeight:"600"}}>Date de création</th>
@@ -292,15 +290,12 @@ const GestionUsers = () => {
        <th style={{fontWeight:"600"}}>Société </th>
        <th style={{fontWeight:"600"}}>Consulter</th>
        <th style={{fontWeight:"600"}}>Gérer</th>
-        
        </tr>
      </thead>
-     <tbody>
+     <tbody style={{color: "black", fontSize: "14px"}}>
        {items.length > 0 ? items.map((el,id)=>{
      return (
       <tr key={id}>
-      
-         
           <td>{el.requestType}</td>
           <td>{el.nbrBoites}</td>
           <td>{el.creationDate}</td>

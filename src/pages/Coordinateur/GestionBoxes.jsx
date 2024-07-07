@@ -311,7 +311,7 @@ const GestionBoites = () => {
           
             <Table style={{borderRadius:"10px", width:"100%", margin:"auto"}} responsive>
      
-            <thead style={{height:"80px", fontSize:"17px"}}>
+            <thead style={{height:"80px", fontSize:"15px"}}>
      <tr>
        
      <th style={{fontWeight:"600"}}>Code à barre </th>
@@ -327,7 +327,7 @@ const GestionBoites = () => {
       
      </tr>
    </thead>
-   <tbody>
+   <tbody style={{color: "black", fontSize: "14px"}}>
      {items.length > 0 ? items.map((el,id)=>{
    return (
     <tr key={id}>
