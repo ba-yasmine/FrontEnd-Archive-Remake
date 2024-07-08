@@ -6,6 +6,8 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import axios from 'axios'
 import Alert from 'react-bootstrap/Alert';
 import {UserContext} from "../../App"
+import { ToastContainer, toast } from 'react-toastify';
+
 
 const ModifierClient = ({objecto}) => {
 
@@ -109,7 +111,10 @@ const ModifierClient = ({objecto}) => {
     .then((response) =>{
      
       setRes({status:response.status,message:response.data.message});
-      
+          toast.success(response.data.message)
+            setTimeout(() => {
+              window.location.reload()
+            }, 3000);
          }
         )}
    
@@ -218,7 +223,13 @@ const ModifierClient = ({objecto}) => {
     
       </form>
       </Form>
-      
+            <ToastContainer
+                  position="top-center"
+                  autoClose={3000}
+                  hideProgressBar={false}
+                  color="green"
+
+                  />
         </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={()=>{handleClose(); setRes(""); }}>
