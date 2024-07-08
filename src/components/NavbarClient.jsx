@@ -71,7 +71,7 @@ const NavbarClient = () => {
                             style={{
                                 width: '40px',
                                 height: '40px',
-                                backgroundColor: '#4CAF50',
+                                backgroundColor: 'rgb(235, 209, 16)',
                                 borderRadius: '8px',
                                 display: 'flex',
                                 justifyContent: 'center',

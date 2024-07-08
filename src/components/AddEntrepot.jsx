@@ -16,8 +16,8 @@ import './styleButton.css';
 
 
 const schema = yup.object({
-    name: yup.string().min(3,"minimum 3 caracteres").max(30,"maximum 30 caracteres").required(),
-    adresse: yup.string().min(3,"minimum 3 caracteres").max(100,"maximum 100 caracteres").required(),
+    name: yup.string().min(3,"minimum 3 caractères").max(30,"maximum 30 caracteres").required(),
+    adresse: yup.string().min(3,"minimum 3 caractères").max(100,"maximum 100 caracteres").required(),
   
     
   }).required();
@@ -60,11 +60,11 @@ const AddEntrepot = ({}) => {
           </Form.Label>
           <Form.Control
           {...register("name")}
-            className="mb-10"
+            className="mb-2"
             id="inlineFormInput"
             placeholder="Nom "
           />
-                  <p style={{color:'red'}}>{errors.name?.message}</p>
+                  <p style={{color:'rgb(222, 78,78)' , marginLeft:"40px"}}>{errors.name?.message}</p>
         </Col>
         <Col xs="auto">
           <Form.Label htmlFor="inlineFormInput" visuallyHidden>
@@ -72,16 +72,16 @@ const AddEntrepot = ({}) => {
           </Form.Label>
           <Form.Control
           {...register("adresse")}
-            className="mb-10"
+            className="mb-2"
             id="inlineFormInput"
             placeholder="Adresse "
           />
-                  <p style={{color:'red'}}>{errors.adresse?.message}</p>
+                  <p style={{color:'rgb(222, 78,78)', marginLeft:"40px"}}>{errors.adresse?.message}</p>
         </Col>
 
         <Col xs="auto">
           <div className="buttonStyle">
-              <Button type="submit" disabled={disableBTN}  style={{ color: 'white', width:110,border:"2px solid #e5e7eb"}} className="mb-10">
+              <Button type="submit" disabled={disableBTN}  style={{ color: 'white', width:"385px",border:"2px solid #e5e7eb"}} className="mb-2">
               {disableBTN ? "Patientez..." : "Ajouter"}
               </Button>
           </div>

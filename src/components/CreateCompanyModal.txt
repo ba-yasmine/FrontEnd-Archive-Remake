@@ -12,11 +12,11 @@ import './styleButton.css';
 
 
 const schema = yup.object({
-  nomSociete: yup.string().min(3,"minimum 3 caracteres").max(100,"maximum 100 caracteres").required(),
-  siege: yup.string().min(5,"minimum 5 caracteres").max(100,"maximum 100 caracteres").required(),
-  contactprincipal: yup.string().min(3, "minimum 3 caracteres").max(100, "maximum 100 caracteres").required(),
-  numerotel: yup.string().min(10, "minimum 10 numero").max(20, "maximum 20 caracteres").required(),
-  email: yup.string().min(13,"minimum 13 caracteres").max(100,"maximum 100 caracteres").required()
+  nomSociete: yup.string().min(3,"minimum 3 caracterès").max(100,"maximum 100 caracteres").required(),
+  siege: yup.string().min(5,"minimum 5 caractères").max(100,"maximum 100 caracteres").required(),
+  contactprincipal: yup.string().min(3, "minimum 3 caractères").max(100, "maximum 100 caracteres").required(),
+  numerotel: yup.string().min(10, "minimum 10 numèro").max(20, "maximum 20 caracteres").required(),
+  email: yup.string().min(13,"minimum 13 caractères").max(100,"maximum 100 caracteres").required()
 
 
 }).required();
@@ -145,9 +145,7 @@ function CreateCompanyModal() {
             
             />
         </div>
-      
-     
-     
+
         </Modal.Body>
     
         </Modal >

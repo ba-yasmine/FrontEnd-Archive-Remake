@@ -215,7 +215,7 @@ const AddBox = () => {
      })
      }
       </Form.Select>
-      <p style={{color:'red'}}>{errors.provenance?.message ? "veuillez selectionner une provenance": ""}</p>
+      <p style={{color:'rgb(222, 78,78)'}}>{errors.provenance?.message ? "veuillez selectionner une provenance": ""}</p>
     </FloatingLabel>
       
       </Form.Group>
@@ -225,7 +225,7 @@ const AddBox = () => {
         <Form.Label>Modèle remplit: </Form.Label>
         <br />
         <Form.Control required style={{ height:"50px", backgroundColor:"#e9ecef"}}   type="file"  placeholder="importer fichier"   {...register('file', { required: true })} />  
-        <p style={{color:'red'}}>{errors.file?.message ? "veuillez selectionner un fichiers": ""}</p>
+        <p style={{color:'rgb(222, 78,78)'}}>{errors.file?.message ? "veuillez selectionner un fichiers": ""}</p>
       </Form.Group>
      
      <br />
@@ -243,7 +243,7 @@ const AddBox = () => {
       <div style={{display: 'flex', flexDirection: 'column' , alignItems:'center'}}>
     <br />
       <div style={{display: 'flex', justifyContent:'space-between',width:'100%' }}>
-      <FloatingLabel   controlId="floatingSelect" label="Choisir une provenance">
+      <FloatingLabel controlId="floatingSelect" label="Choisir une provenance" style={{width:"220px", marginBottom:"4px"}}>
       <Form.Select onChange={(e)=>selectedProvenance2(e.target.value) } defaultValue={selectedProventreetrance}   aria-label="Floating label select example">
       <option>choisir une option</option>
      {provenance?.map((el,id)=>{

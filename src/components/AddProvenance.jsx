@@ -54,14 +54,14 @@ const AddProvenance = ({companyId}) => {
           </Form.Label>
           <Form.Control
           {...register("adresse")}
-            className="mb-10"
+            className="mb-0"
             id="inlineFormInput"
             placeholder="nom de la provenance"
           />
-                  <p style={{color:'red'}}>{errors.adresse?.message}</p>
+                  <p style={{color:'rgb(222, 78,78)'}}>{errors.adresse?.message}</p>
         </Col>
           <div className="buttonStyle">
-              <Button type="submit"  style={{ color: 'white', width:'120px'}} className="mb-3">
+              <Button type="submit"  style={{ color: 'white', width:'130px'}} className="btn-addprovenance">
                 Ajouter
               </Button>
           </div>

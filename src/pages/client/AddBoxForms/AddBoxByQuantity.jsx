@@ -89,14 +89,14 @@ const AddBoxByQuantity = () => {
      }
     </Form.Select>
   </FloatingLabel>
-  <p style={{color:'red'}}>{errors.provenance?.message ? "veuillez selectionner une provenance": ""}</p>
+  <p style={{color:'rgb(222, 78,78)'}}>{errors.provenance?.message ? "veuillez selectionner une provenance": ""}</p>
     </Form.Group>
 
     <Form.Group className="mb-3" controlId="formBasicPassword">
       <Form.Label>Nombre de boites: </Form.Label>
       <Form.Control  {...register('nbrBoites', { required: true })} type="text" placeholder="..100" />
     </Form.Group>
-    <p style={{color:'red'}}>{errors.nbrBoites?.message ? "nombre entre 1 et 2000": ""}</p>
+    <p style={{color:'rgb(222, 78,78)'}}>{errors.nbrBoites?.message ? "Veuillez saisier le nombre de boite": ""}</p>
    <br />
     <Button
        

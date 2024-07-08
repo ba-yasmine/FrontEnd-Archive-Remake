@@ -10,14 +10,14 @@ const WillayaSelect = ({ willayas, onChange, register, errors}) => (
       className='form-control'
       onChange={onChange}
       >
-      <option value="">Select Wilaya</option>
+      <option value="">Choisir Wilaya</option>
       {willayas.map(willaya => (
         <option key={willaya.willayaId} value={willaya.willayaId}>
           {willaya.willayaDesignationFr}
         </option>
       ))}
     </Form.Select>
-    <p style={{color: 'red'}}>{errors.willayaId?.message}</p>
+    <p style={{color: 'rgb(222, 78,78)'}}>{errors.willayaId?.message}</p>
     </Form.Group>
   );
 

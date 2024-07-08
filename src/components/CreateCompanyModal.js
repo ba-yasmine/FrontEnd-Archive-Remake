@@ -14,14 +14,14 @@ import './styleButton.css';
 
 
 const schema = yup.object({
-  nomSociete: yup.string().min(3,"minimum 3 caracteres").max(100,"maximum 100 caracteres").required(),
-  siege: yup.string().min(5,"minimum 5 caracteres").max(100,"maximum 100 caracteres").required(),
-  contactprincipal: yup.string().min(3, "minimum 3 caracteres").max(100, "maximum 100 caracteres").required(),
+  nomSociete: yup.string().min(3,"minimum 3 caractères").max(100,"maximum 100 caracteres").required(),
+  siege: yup.string().min(5,"minimum 5 caractères").max(100,"maximum 100 caracteres").required(),
+  contactprincipal: yup.string().min(3, "minimum 3 caractères").max(100, "maximum 100 caracteres").required(),
   numerotel: yup.string().min(10, "minimum 10 numero").max(20, "maximum 20 caracteres").required(),
-  email: yup.string().min(13,"minimum 13 caracteres").max(100,"maximum 100 caracteres").required(),
-  willayaId: yup.string().required("Please select a Willaya") ,
-  communeId: yup.string().required("Please select a Commune") ,
-  codepostale: yup.string().min(2,"minimum 2 caracteres").max(10,"maximum 10 caracteres").required(),
+  email: yup.string().min(13,"minimum 13 caractères").max(100,"maximum 100 caracteres").required(),
+  willayaId: yup.string().required("Choisir une Willaya") ,
+  communeId: yup.string().required("Choisir une Commune") ,
+  codepostale: yup.string().min(2,"minimum 2 caractères").max(10,"maximum 10 caracteres").required(),
 }).required();
 
 
@@ -131,37 +131,37 @@ const [willayas, setWillayas] = useState([]);
        <Form.Group className="mb-4" controlId="formBasicEmail">
         <Form.Label>Nom société:</Form.Label>
         <Form.Control {...register("nomSociete")} />
-        <p style={{color:'red'}}>{errors.nomSociete?.message}</p>
+        <p style={{color:'rgb(222, 78,78)'}}>{errors.nomSociete?.message}</p>
       </Form.Group>
 
 
       <Form.Group className="mb-4" controlId="formBasicEmail">
         <Form.Label>Contact Principal:</Form.Label>
         <Form.Control {...register("contactprincipal")} />
-        <p style={{color:'red'}}>{errors.contactprincipal?.message}</p>
+        <p style={{color:'rgb(222, 78,78)'}}>{errors.contactprincipal?.message}</p>
       </Form.Group>
 
       <Form.Group className="mb-4" controlId="formBasicEmail">
         <Form.Label>Email:</Form.Label>
         <Form.Control {...register("email")} />
-        <p style={{color:'red'}}>{errors.email?.message}</p>
+        <p style={{color:'rgb(222, 78,78)'}}>{errors.email?.message}</p>
       </Form.Group>
 
       <Form.Group className="mb-4" controlId="formBasicEmail">
         <Form.Label>Téléphone:</Form.Label>
         <Form.Control {...register("numerotel")} />
-        <p style={{color:'red'}}>{errors.numerotel?.message}</p>
+        <p style={{color:'rgb(222, 78,78)'}}>{errors.numerotel?.message}</p>
       </Form.Group>
 
       <Form.Group className="mb-4" controlId="formBasicEmail">
           <Form.Label>Adresse: </Form.Label>
           <Form.Control {...register("siege")} />
-          <p style={{color:'red'}}>{errors.siege?.message}</p>
+          <p style={{color:'rgb(222, 78,78)'}}>{errors.siege?.message}</p>
       </Form.Group>
       <Form.Group className="mb-4" controlId="adresse">
           <Form.Label>Code Postale:</Form.Label>
           <Form.Control {...register("codepostale")} />
-          <p style={{color:'red'}}>{errors.codepostale?.message}</p>
+          <p style={{color:'rgb(222, 78,78)'}}>{errors.codepostale?.message}</p>
       </Form.Group>
 
 

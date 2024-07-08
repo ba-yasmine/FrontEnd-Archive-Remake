@@ -14,7 +14,6 @@ import AddWareHouse from "./AddEntrepot";
 import './styleButton.css';
 
 
-
 export const EntrepotContext = createContext();
 
 const WareHousesModal = ({companyId}) => {
@@ -41,8 +40,6 @@ const WareHousesModal = ({companyId}) => {
         SetEntrepotList(response.data)
        
       }
-     
-      
           ).catch((err) => {
           
             
@@ -55,7 +52,7 @@ const WareHousesModal = ({companyId}) => {
    <>
       <div className="buttonStyle">
           <Button  onClick={handleShow}>
-            Gérer les entrepôts
+            Ajouter entrepôt
           </Button>
       </div>
 
@@ -82,8 +79,7 @@ const WareHousesModal = ({companyId}) => {
       
     </ListGroup.Item>
      }) : <NoResult/>}
-     
-   
+
     
     </ListGroup>
         </Modal.Body>

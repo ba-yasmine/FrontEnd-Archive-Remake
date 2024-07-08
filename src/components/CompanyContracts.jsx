@@ -93,7 +93,7 @@ const CompanyContracts = ({company}) => {
             color="green"
             
             />
-<h4 style={{marginTop:"30px", marginBottom:"30px"}}>Ajouter un contrat: </h4>
+<h4 style={{marginTop:"10px", marginBottom:"30px"}}>Ajouter un contrat: </h4>
 <InputGroup  style={{display:"flex", flexWrap: "wrap"}}>
        <input type="date"  style={{border:"1px solid #dee2e6"}}
          onChange={e=> setDateDebut(e.target.value)}
@@ -122,7 +122,7 @@ const CompanyContracts = ({company}) => {
 
       <h4 style={{marginTop:"30px", marginBottom:"30px"}}>Liste des contrats: </h4>
           <Table striped responsive  hover size="sm" style={{color:"#0243cd"}}>
-      <thead>
+      <thead style={{color: "black", fontsize: "15px"}}>
         <tr>
           <th>Date de debut</th>
           <th>Date de fin</th>
@@ -133,7 +133,7 @@ const CompanyContracts = ({company}) => {
        
         </tr>
       </thead>
-      <tbody>
+      <tbody style={{ fontsize: "14px"}}>
         {companie !== undefined && companie?.length > 0 ? companie.map((el,idx) => {
         
         return(
