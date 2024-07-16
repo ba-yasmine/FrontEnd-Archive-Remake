@@ -27,7 +27,7 @@
    @media screen and (max-width: 1117px) {
       body{
         overflow-y: hidden;
-        background: linear-gradient(to top, #0243cd 50%, #f9fafb 50%);
+        /*background: linear-gradient(to top, #0243cd 50%, #f9fafb 50%);*/
       }
       #loginBack{
         background:linear-gradient(to bottom, rgb(241, 201, 58) 50%, rgb(2 67 222) 50%) !important;

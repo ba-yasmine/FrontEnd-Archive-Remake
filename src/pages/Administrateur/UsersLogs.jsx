@@ -251,15 +251,15 @@ const GestionLogs = () => {
     <option value='100'>100</option>
      
     </Form.Select>
-      <div className="exporter">
+      <div id="exporter">
           <Button onClick={()=>handleExportChange()}
-          style={{  color:'blue', paddingLeft:'20px', paddingRight:'20px', display:'flex', flexDirection:'row', width:'auto', paddingTop:"4px", paddingBottom:"2px"}}> <p style={{fontWeight:'600' , paddingTop:'8px', paddingBottom: '0px'}}>Exporter</p>   <TbFileExport style={{fontSize:'30px',marginLeft:'5px' , paddingTop: '10px' }}/></Button>
+          style={{  paddingLeft:'20px', paddingRight:'20px', display:'flex', flexDirection:'row', width:'auto', paddingTop:"4px", paddingBottom:"2px"}}> <p style={{fontWeight:'600' , paddingTop:'8px', paddingBottom: '0px'}}>Exporter</p>   <TbFileExport style={{fontSize:'30px',marginLeft:'5px' , paddingTop: '10px' }}/></Button>
       </div>
     </div >
             
             <Table style={{borderRadius:"10px", width:"100%",margin:"auto"}} responsive>
      
-            <thead style={{height:"60px", fontSize:"15px"}}>
+            <thead style={{backgroundColor:"#f8f9fa",height:"60px", fontSize:"15px"}}>
       <tr>
 
         <th style={{fontWeight:"600"}}>Nom d'utilisateur<button style={{border:"none", background:"none", color:"#0243cd"}}  ></button></th>

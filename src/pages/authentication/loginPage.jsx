@@ -96,7 +96,7 @@ const LoginPage = () => {
             if (response.data.roles[0] === "ROLE_CLIENT"){   navigate(`/Client/Accueil/${userAuth.ID}/${userAuth.company}`);setIsAuth(true);}
             
         else if (response.data.roles[0] === "ROLE_COORDINATEUR") { navigate('/Coordinateur/Accueil');setIsAuth(true);} 
-             else if (response.data.roles[0] === "ROLE_ADMIN") { navigate('/Admin/clients');setIsAuth(true);}
+             else if (response.data.roles[0] === "ROLE_ADMIN") { navigate('/Admin/companies');setIsAuth(true);}
           }
              }
             ).catch((e)=>{

@@ -38,7 +38,7 @@ const Accueil = () => {
             <div id='boxone'>
             <Card border="primary"
             onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/addBox`)  }
-            style={{ width: '22rem' ,color:"white", background:"linear-gradient(90deg,#ffbf96,#fe7096)", cursor: 'pointer', border:'none'}}>
+            style={{ width: '22rem' ,color:"white", background:"linear-gradient(90deg,#311ed7,#2216a2)", cursor: 'pointer', border:'none'}}>
             <Card.Header style={{ padding:'20px' }}>Processus</Card.Header>
             <Card.Body style={{ paddingTop:'40px', paddingBottom:'40px' }}>
               <Card.Title>AJOUT DE BOITES</Card.Title>
@@ -49,7 +49,7 @@ const Accueil = () => {
           </Card>
          </div>
         <div id='boxtwo'>
-          <Card border="secondary"  onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/boxRequest`)  } style={{ width: '22rem',color:"white" , background: "linear-gradient(90deg,#90caf9,#047edf 99%)",cursor: 'pointer' , border:'none'}}>
+          <Card border="secondary"  onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/boxRequest`)  } style={{ width: '22rem',color:"white" , background: "linear-gradient(90deg,#3195f6,#047edf 99%)",cursor: 'pointer' , border:'none'}}>
             <Card.Header style={{ padding:'20px' }}>Processus</Card.Header>
             <Card.Body  style={{ paddingTop:'40px', paddingBottom:'40px' }}>
               <Card.Title> DEMANDE DE BOITES </Card.Title>
@@ -60,7 +60,7 @@ const Accueil = () => {
           </Card>
       </div>
       <div id='boxthree'>
-          <Card border="success"  onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/boxReturn`)  } style={{ width: '22rem', color:"white",  background: "linear-gradient(90deg,#84d9d2,#07cdae)", cursor: 'pointer' , border:'none'}}>
+          <Card border="success"  onClick={() => navigate(`/Client/Demandes/${userAuth.ID}/${userAuth.company}/boxReturn`)  } style={{ width: '22rem', color:"white",  background: "linear-gradient(90deg,#fabd57,#f79e0c)", cursor: 'pointer' , border:'none'}}>
             <Card.Header style={{ padding:'20px' }}>Processus</Card.Header>
             <Card.Body  style={{ paddingTop:'40px', paddingBottom:'40px' }}>
               <Card.Title>RETOUR DE BOITES </Card.Title>
