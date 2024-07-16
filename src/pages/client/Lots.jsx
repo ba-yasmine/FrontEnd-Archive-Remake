@@ -254,7 +254,7 @@ function scroll(){
           <td>{el.nbrBoites}</td>
           <td>{el.id}</td>
           <td><Button style={{backgroundColor:'white', border:'none' }}  variant="primary"><Link style={{textDecoration:"none", color: "#0243cd"}}  to={`/Client/Demandes/demandesLookup/${el.id}/${userAuth.company}`}>{infoIco}</Link> </Button></td>
-          <td><Button style={{backgroundColor:'#0243cd', border:'none',  }}  variant="primary"><Link style={{textDecoration:"none", color:'white'}}  to={`/Client/Lot/${userAuth.company}/${el.id}/suivitlot`}>suivre</Link> </Button></td>
+          <td className="buttonStyle"><Button style={{ border:'none',  }}  variant="primary"><Link style={{textDecoration:"none", color:'white'}}  to={`/Client/Lot/${userAuth.company}/${el.id}/suivitlot`}>suivre</Link> </Button></td>
        </tr>
      )  
        } 

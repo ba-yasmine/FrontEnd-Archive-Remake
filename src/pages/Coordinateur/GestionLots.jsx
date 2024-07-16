@@ -305,7 +305,7 @@ const GestionUsers = () => {
          
       
 
-       <td><Button v style={{height:"auto", backgroundColor:"#0243cd"}} variant="primary">
+       <td className="buttonStyle"><Button v style={{height:"auto"}} variant="primary">
        <Link style={{textDecoration:"none", color: "white"}}  to={`/Admin/demandes/${el?.boxes[0]?.provenance?.company?.id}/${el.id}`}>{infoIco}</Link>
       </Button></td>   
     <td> 

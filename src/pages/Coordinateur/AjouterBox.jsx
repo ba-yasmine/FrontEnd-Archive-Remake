@@ -276,10 +276,11 @@ const onSubmit = (data) => {
         <p style={{color:'red'}}>{errors.codeBarre?.message}</p>
       </Form.Group>
 
-      <Button style={{backgroundColor:"#0243cd"}} disabled={disableBTN} variant="primary" type="submit">
-      {disableBTN ? "Patientez..." : "Ajouter la boite"} 
-      </Button>
-    
+      <div className="buttonStyle">
+          <Button  disabled={disableBTN} variant="primary" type="submit">
+          {disableBTN ? "Patientez..." : "Ajouter la boite"}
+          </Button>
+      </div>
       </div>
       </Form>
       

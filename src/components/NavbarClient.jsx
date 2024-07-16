@@ -120,7 +120,7 @@ const NavbarClient = () => {
                                </li>
                            </ul>
                 </div>
-                <div className="bottom-content">
+                <div className="bottom-content" style={{cursor: "pointer"}}>
 
                           <li >
                            <a id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false" >

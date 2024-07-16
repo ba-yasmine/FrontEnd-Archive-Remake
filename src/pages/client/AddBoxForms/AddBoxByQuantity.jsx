@@ -9,6 +9,8 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { ToastContainer, toast } from 'react-toastify';
 import { useEffect } from 'react';
 import {UserContext} from "../../../App"
+import '../../../components/styleButton.css';
+
 const schema = yup.object().shape({
 
     provenance: yup.string().required(),
@@ -72,10 +74,10 @@ const AddBoxByQuantity = () => {
             autoClose={3000}
             hideProgressBar={false}
             color="green"
-            
+
             />
     
-    <Form.Group className="mb-3" controlId="formBasicEmail">
+    <Form.Group className="mb-3"  controlId="formBasicEmail">
      <br />
       <Form.Label>Provenance:</Form.Label>
      <br />
@@ -98,11 +100,11 @@ const AddBoxByQuantity = () => {
     </Form.Group>
     <p style={{color:'rgb(222, 78,78)'}}>{errors.nbrBoites?.message ? "Veuillez saisier le nombre de boite": ""}</p>
    <br />
-    <Button
-       
-    style={{backgroundColor:'#0243cd'}} type="submit">
-      Confirmer
-    </Button>
+    <div className="buttonStyle">
+        <Button type="submit">
+          Confirmer
+        </Button>
+    </div>
   </Form></div>
   )
 }

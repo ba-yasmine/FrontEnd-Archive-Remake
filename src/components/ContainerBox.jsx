@@ -247,11 +247,6 @@ else{
            
 
 
-
-
-
-
-
           
           
           <Form.Group  className="mb-3" controlId="formBasicEmail">
@@ -317,7 +312,7 @@ else{
            </Button> {idx !== 0  && idx === ListDonne.length - 1 ? <Button style={{ color:"#fff"}} onClick={()=>{ DeleteFromState(el)} }   variant="danger"> 
              Supprimer
            </Button> : <p></p> } </div> 
-           : <div style={{display:"flex", flexDirection:"row", gap:"10px"}}><Button type="submit" style={{backgroundColor:"#0243cd", height:"42px"}} onClick={()=>{ if( desc !== "")  {addToList(el.id)} else{ return }}} variant="primary">
+           : <div  style={{display:"flex", flexDirection:"row", gap:"10px"}}><Button type="submit" style={{backgroundColor:"#0243cd", height:"42px"}} onClick={()=>{ if( desc !== "")  {addToList(el.id)} else{ return }}} variant="primary">
            Confirmer
          </Button> <p style={{color:"red", marginLeft:"9px", marginTop:"10px"}}> </p></div>
            

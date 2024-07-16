@@ -177,7 +177,7 @@ const AddBox = () => {
       justify
     >
       <Tab eventKey="home" title="Ajout quantitatif"  >
-      <div class='formAdd' style={{margin:"auto", marginTop:"45px",width:"25%" , padding:'10px' , borderRadius:"5px", border :'2px solid #e5e7eb ', }}>
+      <div class='formAdd'  id="lists" style={{margin:"auto", marginTop:"45px",width:"25%" , padding:'10px' , borderRadius:"5px", border :'2px solid #e5e7eb ', }}>
         <Card.Title style={{color:'#0243cd'}} >Créez votre lot</Card.Title>
          <AddBoxByQuantityForm/>
          
@@ -186,7 +186,7 @@ const AddBox = () => {
       </Tab>
       <Tab eventKey="profile" title="Ajout par fichier Excel">
       
-      <div class='formAdd' style={{margin:"auto", marginTop:"45px",width:"25%" , padding:'10px' , borderRadius:"5px", border :'2px solid #e5e7eb ', }}>
+      <div id="lists" class='formAdd' style={{margin:"auto", marginTop:"45px",width:"25%" , padding:'10px' , borderRadius:"5px", border :'2px solid #e5e7eb ', }}>
         <Card.Title style={{color:'#0243cd'}} >Créez votre lot</Card.Title>
         <Form onSubmit={handleSubmit(onSubmit)}>
         <br />
@@ -221,7 +221,7 @@ const AddBox = () => {
       </Form.Group>
    
      
-     <Form.Group className="mb-3" controlId="formBasicPassword">
+     <Form.Group className="mb-3"  controlId="formBasicPassword">
         <Form.Label>Modèle remplit: </Form.Label>
         <br />
         <Form.Control required style={{ height:"50px", backgroundColor:"#e9ecef"}}   type="file"  placeholder="importer fichier"   {...register('file', { required: true })} />  
@@ -229,12 +229,14 @@ const AddBox = () => {
       </Form.Group>
      
      <br />
-     <Button 
-          disabled={isLoading}
-          type="submit"
-         style={{marginLeft:"15px" ,backgroundColor:"#0243cd"}} >
-          {isLoading ? 'chargement...' : "confirmer"}
+     <div className="buttonStyle">
+         <Button
+              disabled={isLoading}
+              type="submit"
+             style={{marginLeft:"15px" }} >
+              {isLoading ? 'chargement...' : "confirmer"}
          </Button>
+     </div>
     </Form>
          
         </div>
