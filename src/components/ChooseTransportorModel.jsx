@@ -18,10 +18,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 
 const schema = yup.object().shape({
   firstname: yup.string().required("Le nom est requis"),
-  lastname: yup.string().required("Le prenom est requis"),
+  lastname: yup.string().required("Le prénom est requis"),
   phoneNumber: yup.string()
   .matches(/^(05|06|07)[0-9]{8}$/, "format invalide")
-  .required("Le numero de telephone  est requis"),
+  .required("Le numéro de téléphone  est requis"),
   email: yup.string().required("L'email est requis"),
 });
 
@@ -48,22 +48,22 @@ function Example({ batchId}) {
       'Authorization':  "Bearer" + userAuth.token
     }})
     .then((response) =>{
-    
+
        setTransporteursList(response.data)
     }
         ).catch((err) => {
-     
-         
+
+
         })
   }, [show])
-  
+
 const assignTransportor=() => {
   setLoading(true)
   axios.put(`${process.env.REACT_APP_HOST_VAR}rest/batches/fixTransportor/${batchId.id}/${transporteur.id}`,{},{headers:{
     'Authorization':  "Bearer" + userAuth.token
   }})
   .then((response) =>{
-    
+
       toast.success(response.data.message)
       setTimeout(() => {
         window.location.reload()
@@ -75,27 +75,30 @@ const assignTransportor=() => {
         headers:{'Authorization': "Bearer" + userAuth.token}
         // important
     }).then((response) => {
- 
+
         // create file link in browser's memory
         const href = URL.createObjectURL(response.data);
-    
+
         // create "a" HTLM element with href to file & click
         const link = document.createElement('a');
         link.href = href;
-        link.setAttribute('download', 'Transfert_de_responsabilité' + batchId.id + '.pdf' ); //or any other extension
+        link.setAttribute('download', 'Transfere_de_responsabilite' + batchId.id + '.pdf' ); //or any other extension
         document.body.appendChild(link);
         link.click();
-    
+
         // clean up "a" element & remove ObjectURL
         document.body.removeChild(link);
-        
+
     }).catch()
   }
       ).catch((err) => {
- 
+
         toast.error(err.response.data.message)
       })
 }
+
+
+
 const onSubmit = (data) => {
   data.roles = [{id:5  ,name: "ROLE_TRANSPORTEUR"}]
   data.password = "testpassword"
@@ -104,33 +107,51 @@ const onSubmit = (data) => {
   axios.post(`${process.env.REACT_APP_HOST_VAR}rest/user/createUser`,data,{ headers:{
     'Authorization':  "Bearer" + userAuth.token
   }})
-  .then((response) =>{ 
+  .then((response) =>{
        setLoading(false);
-    
+
       setLoading(true)
   axios.put(`${process.env.REACT_APP_HOST_VAR}rest/batches/fixTransportor/${batchId.id}/${response.data.message}`,{},{headers:{
     'Authorization':  "Bearer" + userAuth.token
   }})
   .then((response) =>{
 
-      toast.success(response.data.message)
-      setTimeout(() => {
-        window.location.reload()
-      }, 3000);
-   
-  }
-      ).catch((err) => {
-        setLoading(false)
-        toast.error(err.response.data.message)
-      })
+        toast.success(response.data.message)
+        setTimeout(() => {
+          window.location.reload()
+        }, 3000);
+        axios({
+          url: `${process.env.REACT_APP_HOST_VAR}rest/batches/word/${batchId.id}`, //your url
+          method: 'GET',
+          responseType: 'blob',
+          headers:{'Authorization': "Bearer" + userAuth.token}
+          // important
+      }).then((response) => {
 
-       }
-      ).catch((err) => {
-        setLoading(false)
-        toast.error(err.response.data.message)
-      })
+          // create file link in browser's memory
+          const href = URL.createObjectURL(response.data);
 
-}
+          // create "a" HTLM element with href to file & click
+          const link = document.createElement('a');
+          link.href = href;
+          link.setAttribute('download', 'Transfere_de_responsabilite' + batchId.id + '.pdf' ); //or any other extension
+          document.body.appendChild(link);
+          link.click();
+
+          // clean up "a" element & remove ObjectURL
+          document.body.removeChild(link);
+
+      }).catch()
+    }
+        ).catch((err) => {
+
+          toast.error(err.response.data.message)
+        })
+
+  })}
+
+
+
 
   return (
     <>
@@ -139,12 +160,12 @@ const onSubmit = (data) => {
       </Button>
 
       <Modal style={{color:'#0243cd'}} show={show} onHide={handleClose}>
-      <ToastContainer 
+      <ToastContainer
             position="top-center"
             autoClose={3000}
             hideProgressBar={false}
             color="green"
-            
+
             />
         <Modal.Header closeButton>
           <Modal.Title> Confirmation de redirection</Modal.Title>
@@ -156,10 +177,10 @@ const onSubmit = (data) => {
         onChange={(e) =>{setTransporteur(JSON.parse(e.target.value))
        } }
       >
-        <option value="">Choisir un transporteur</option>
+        <option value="">choisir un transporteur</option>
        {transporteursList && transporteursList.length > 0 && transporteursList.map((el,id) =>{
 
-          return  <option key={id} value={JSON.stringify(el)} >Nom: {el.firstname} |  Prénom: {el.lastname}</option>
+          return  <option key={id} value={JSON.stringify(el)} >Nom: {el.firstname} |  Prenom: {el.lastname}</option>
        })}
       </Form.Select>
     </FloatingLabel>
@@ -169,8 +190,8 @@ const onSubmit = (data) => {
       <Card.Header style={{color:'#0243cd'}} as="h5">Informations du transporteur</Card.Header>
       <Card.Body>
 
-        {transporteur === null ? 
-        
+        {transporteur === null ?
+
         <div>
          <h6 style={{textAlign: 'center'}}>Ajouter un nouveau transporteur</h6>
          <Form  onSubmit={handleSubmit(onSubmit)}>
@@ -196,16 +217,16 @@ const onSubmit = (data) => {
         <Form.Control  {...register('phoneNumber', { required: true })}  type="text" placeholder="0xxxxxxxxx" />
         <p style={{color:'red'}}>{errors.phoneNumber?.message}</p>
       </Form.Group>
-     
-      <Button  
+
+      <Button
       disabled={isLoading}
-        
+
            style={{backgroundColor:'white',border:"2px solid #e5e7eb", color:'#0243cd', fontWeight:"600"}}   type="submit">
         Enregister et affecter
       </Button>
     </Form>
 
-        </div> : 
+        </div> :
 
         <div style={{display:'flex',justifyContent: 'space-between',color:'#0243cd', }}>
        <ListGroup variant="flush" style={{width:"60%",}}>
@@ -213,24 +234,24 @@ const onSubmit = (data) => {
      <ListGroup.Item style={{display:'flex', flexDirection:'row', gap:'5px',padding:"3px",color:'#0243cd',}}><p style={{fontWeight:"600"}}>Prénom:</p>{transporteur?.lastname}</ListGroup.Item>
      <ListGroup.Item style={{display:'flex', flexDirection:'row', gap:'5px',padding:"3px",color:'#0243cd',}}><p style={{fontWeight:"600"}}>Pseudo:</p>{transporteur?.name}</ListGroup.Item>
      <ListGroup.Item style={{display:'flex', flexDirection:'row', gap:'5px',padding:"3px",color:'#0243cd',}}><p style={{fontWeight:"600"}}>Email:</p> {transporteur?.email}</ListGroup.Item>
-     <ListGroup.Item style={{display:'flex', flexDirection:'row', gap:'5px',padding:"3px",color:'#0243cd',}}><p style={{fontWeight:"600"}}>Téléphone:</p> {transporteur?.phoneNumber}</ListGroup.Item>
+     <ListGroup.Item style={{display:'flex', flexDirection:'row', gap:'5px',padding:"3px",color:'#0243cd',}}><p style={{fontWeight:"600"}}>Telephone:</p> {transporteur?.phoneNumber}</ListGroup.Item>
     </ListGroup>
     <div style={{backgroundColor:'white',border:"2px solid #e5e7eb", width:"30%", maxHeight:'100%',padding:"10px", borderRadius:"10px",display:"flex",justifyContent:"space-between",flexDirection:'column',alignItems:'center'}}>
       <CgProfile style={{fontSize:'60px', color:'#0243cd', }}/>
-      <Button 
+      <Button
          disabled={isLoading}
          onClick={!isLoading ? assignTransportor : null}
       style={{backgroundColor:'white',border:"2px solid #e5e7eb", color:'#0243cd', fontWeight:"600"}} > {isLoading === false ? 'affecter' : ''} {isLoading ? 'chargement...' :  choose }  </Button>
-    
+
     </div>
     </div>
     }
-       
-    
+
+
       </Card.Body>
     </Card>
         </Modal.Body>
-       
+
       </Modal>
     </>
   );

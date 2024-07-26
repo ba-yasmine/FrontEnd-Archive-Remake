@@ -54,22 +54,26 @@ const AddDepartement = ({ companyId }) => {
 
     }, [refresh, companyId, userAuth.token]);
 
-    const onSubmit = (e) => {
-        e.preventDefault();
-        axios.post(`${process.env.REACT_APP_HOST_VAR}rest/departements/add-departement/${departement}/${companyId}`, {}, {
-            headers: {
-                'Authorization': "Bearer " + userAuth.token
-            }
-        })
-        .then((response) => {
-            setRefresh(prev => prev + 1);
-            toast('Département ajouté à cette société !');
-            setRefreshDepartements(prev => prev + 1);
-        })
-        .catch((err) => {
-            toast(err.response?.data?.message || 'Erreur lors de l\'ajout du département');
-        });
-    };
+const onSubmit = (e) => {
+    e.preventDefault();
+    console.log('Form submitted');
+    axios.post(`${process.env.REACT_APP_HOST_VAR}rest/departements/add-departement/${departement}/${companyId}`, {}, {
+        headers: {
+            'Authorization': "Bearer " + userAuth.token
+        }
+    })
+    .then((response) => {
+        console.log('Department added successfully');
+        setRefresh(prev => prev + 1);
+        toast('Département ajouté à cette société !');
+        setRefreshDepartements(prev => prev + 1);
+    })
+    .catch((err) => {
+        console.error(err);
+        toast(err.response?.data?.message || 'Erreur lors de l\'ajout du département');
+    });
+};
+
 
     const addNewDepartement = (e) => {
         e.preventDefault();
