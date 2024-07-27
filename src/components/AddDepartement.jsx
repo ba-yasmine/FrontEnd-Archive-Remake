@@ -65,7 +65,7 @@ const onSubmit = (e) => {
     .then((response) => {
         console.log('Department added successfully');
         setRefresh(prev => prev + 1);
-        toast('Département ajouté à cette société !');
+        //toast('Département ajouté à cette société !');
         setRefreshDepartements(prev => prev + 1);
     })
     .catch((err) => {
@@ -84,7 +84,7 @@ const onSubmit = (e) => {
         })
         .then((response) => {
             setRefresh(prev => prev + 1);
-            toast('Nouveau département ajouté à cette société avec succès !');
+            //toast('Nouveau département ajouté à cette société avec succès !');
             setNewDepartementName('');
             setAddedDepartements(prev => [...prev, response.data]); // Add the new department to the added list
             setRefreshDepartements(prev => prev + 1);
@@ -138,7 +138,7 @@ const onSubmit = (e) => {
                             type="text"
                             value={newDepartementName}
                             onChange={(e) => setNewDepartementName(e.target.value)}
-                            placeholder=""
+                            placeholder="Nouveau département"
                             required
                             style={{ marginBottom: '10px', width: 260 }}
                             minLength={5} 

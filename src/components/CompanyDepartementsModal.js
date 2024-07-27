@@ -55,7 +55,7 @@ const CompanyDepartement = ({ companyId }) => {
     }
   )
     .then((response) => {
-        toast("Département supprimé avec succès");
+        //toast("Département supprimé avec succès");
         setRefreshDepartements(prev => prev + 1);
     })
     .catch((err) => {

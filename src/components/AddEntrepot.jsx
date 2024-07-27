@@ -41,7 +41,7 @@ const AddEntrepot = ({}) => {
       
       {
         setDisableBTN(false)
-        toast.success(response.data.message)
+        //toast.success(response.data.message)
         setRefresh(prev => prev+1)
       }
             

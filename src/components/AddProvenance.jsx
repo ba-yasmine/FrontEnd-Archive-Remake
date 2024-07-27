@@ -17,10 +17,10 @@ import './styleButton.css';
 
 const schema = yup.object({
     adresse: yup.string().min(3,"minimum 3 caracteres").max(100,"maximum 100 caracteres").required(),
-  
-    
+
+
   }).required();
-  
+
 const AddProvenance = ({companyId}) => {
 
     const {userAuth,setUserAuth} = useContext(UserContext);
@@ -34,12 +34,12 @@ const AddProvenance = ({companyId}) => {
         'Authorization':  "Bearer" + userAuth.token
       }})
       .then((response) =>
-      
+
       {
-        toast('provenance ajoute a cette societe !')
+        //toast('provenance ajoute a cette societe !')
         setRefresh(prev => prev+1)
       }
-            
+
           ).catch((err) => {
             toast('la provenance existe déja');
           })
@@ -56,6 +56,7 @@ const AddProvenance = ({companyId}) => {
           {...register("adresse")}
             className="mb-0"
             id="inlineFormInput"
+
             placeholder="nom de la provenance"
           />
                   <p style={{color:'rgb(222, 78,78)'}}>{errors.adresse?.message}</p>
